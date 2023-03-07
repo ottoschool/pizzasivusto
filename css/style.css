@@ -348,6 +348,7 @@ button {
 }
 
 .header_box {
+    padding-left: 31%;
     order: 2;
     display: flex;
 }
