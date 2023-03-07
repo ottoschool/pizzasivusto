@@ -38,19 +38,19 @@
       <script text="text/javascript" language="javascript" src="js/account.js"></script>
    </head>
    <body>
-      <!-- logo section start -->
-         <div class="register_logo_section">
-            <div class="container">
-               <div class="row">
-                  <div class="col-sm-12">
-                     <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
-                  </div>
-               </div>
+        <div class="register_main">
+         <!-- logo section start -->
+            <div class="register_logo_section">
+                <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+                    </div>
+                </div>
+                </div>
             </div>
-         </div>
          <!-- logo section end -->
-      <!-- banner bg main start -->
-      <div>
+         <!-- banner bg main start -->
          <!-- header top section start -->
          <!-- header top section start -->
          
@@ -65,6 +65,7 @@
                             <form action="/js/account.js" class="register_form" id="register_form">
                                 <input type="text" name="register_username" id="register_username" placeholder="Käyttäjänimi">
                                 <input type="password" name="register_password" id="register_password" placeholder="Salasana">
+                                <p id="register_error_message" ></p>
                                 <input type="button" name="register_submit" id="submitbtn" value="Rekisteröidy" onclick="register()">
                             </form>
                             <div class="centeredbtn">

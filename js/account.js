@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", disableErrorMsg);
+
+function disableErrorMsg() {
+    try{
+        document.getElementById("register_error_message").style.display = "none"
+    }catch{
+        
+    }
+}
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
@@ -15,6 +24,9 @@ function register() {
 
         document.getElementById("register_form").style.display = "none"
         document.getElementById("register_status").textContent = `Tervetuloa ${username}!`
+    }else {
+        document.getElementById("register_error_message").style.display = ""
+        document.getElementById("register_error_message").textContent = "Rekisteröinnissä tapahtui virhe! Käyttäjänimi tai salasana puuttuu."
     }
 }
 
