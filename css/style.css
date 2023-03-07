@@ -390,6 +390,7 @@ button {
     background: rgba(250, 250, 250, 0);
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -431,6 +432,8 @@ button {
     margin-right: 5px;
     color: white;
     background-color: #000;
+    border: none;
+    border-radius: 5px;
 }
 #submitbtn:hover {
     background-color: #f26522;
@@ -503,6 +506,17 @@ button {
     color: #f26522;
 }
 
+.login_menu input {
+    border: none;
+    border-radius: 5px;
+    margin: 2px;
+    background-color: white;
+}
+
+.login_menu input::placeholder {
+    color: #000;
+}
+
 .padding_10 {
     padding-left: 10px;
 }
@@ -534,11 +548,11 @@ a:hover {
 
 /* header section end */
 
+
 /* register banner */
 
 .register_section {
     width: 100%;
-    float: left;
     padding-bottom: 242px;
     background-color: #212529;
 }
@@ -548,6 +562,16 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.register_form input {
+    border: none;
+    border-radius: 5px;
+}
+
+.register_form input::placeholder {
+    color: #000;
+    background-color: white;
 }
 
 .register_logo_section {
@@ -569,6 +593,8 @@ a:hover {
     padding-top: 10px;
     text-align: center;
 }
+
+/* register banner end */
 
 /* banner section start */
 
