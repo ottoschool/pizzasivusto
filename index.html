@@ -35,6 +35,7 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesoeet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <script text="text/javascript" language="javascript" src="js/account.js"></script>
    </head>
    <body>
       <!-- logo section start -->
@@ -75,9 +76,19 @@
                               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                               <span class="padding_10">Cart</span></a>
                            </li>
-                           <li><a href="#">
-                              <i class="fa fa-user" aria-hidden="true"></i>
-                              <span class="padding_10">Cart</span></a>
+                           <li>
+                              <img src="images/user-icon.png"/>
+                              <button onclick="loginDropdown()" class="dropbtn">Kirjaudu</button>
+                              <div id="Dropdown" class="dropdown-content">
+                                 <form action="/js/account.js">
+                                    <input type="text" id="login_username" name="login_username" placeholder="Käyttäjänimi">
+                                    <input type="password" id="login_password" name="login_password" placeholder="Salasana">
+                                    <div class="button_container">
+                                       <input type="button" id="submitbtn" value="Rekisteröinti" onclick="location.href='register.html';" />
+                                       <input id="submitbtn" type="submit" value="Kirjaudu">
+                                    </div>
+                                 </form>
+                              </div>
                            </li>
                         </ul>
                      </div>
