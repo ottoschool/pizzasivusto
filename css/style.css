@@ -765,6 +765,10 @@ a:hover {
     min-height: 370px;
 }
 
+#box_main1 {
+    background-image: images/amerikkalainen pizza.jpg;
+}
+
 .btn_main {
     width: 100%;
     display: flex;
