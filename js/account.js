@@ -36,7 +36,7 @@ function disableErrorMsg() { // piilottaa virheviestin ettei sitä näytetä tur
 // togglee kirjautumis valikon pääsivulla
 function loginDropdown() {
     document.getElementById("Dropdown").classList.toggle("show");
-    if (isLoggedIn) {
+    if (isLoggedIn()) {
         document.getElementById("login_message").textContent = `Tervetuloa ${localStorage.getItem("Käyttäjänimi")}!`
         document.getElementById("logged_in_content").style.display = ""
         document.getElementById("login_form").style.display = "none"
