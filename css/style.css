@@ -539,6 +539,14 @@ button {
     padding-left: 10px;
 }
 
+#login_error_message {
+    color: red;
+    margin: 3px;
+    font-size:x-small;
+    visibility: hidden;
+    text-align: center;
+}
+
 
 /* flage css start */
 
@@ -625,6 +633,7 @@ a:hover {
     color: red;
     margin: 3px;
     font-size: small;
+    visibility: visible;
 }
 
 /* register banner end */

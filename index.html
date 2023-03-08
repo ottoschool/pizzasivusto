@@ -76,11 +76,12 @@
                               <span class="padding_10">Cart</span></a>
                            </li>
                            <li>
-                              <button onclick="loginDropdown()" class="dropbtn"><img src="images/user-icon.png"/>Kirjaudu</button>
+                              <button onclick="loginDropdown()" class="dropbtn" id="dropbtn"><img src="images/user-icon.png"/>Kirjaudu</button>
                               <div id="Dropdown" class="dropdown-content">
                                  <form action="/js/account.js" class="login_form" id="login_form">
                                     <input type="text" id="login_username" name="login_username" placeholder="Käyttäjänimi">
                                     <input type="password" id="login_password" name="login_password" placeholder="Salasana">
+                                    <p id="login_error_message"></p>
                                     <div class="button_container">
                                        <input type="button" id="submitbtn" value="Rekisteröinti" onclick="location.href='register.html';" />
                                        <input type="button" id="submitbtn" value="Kirjaudu" onclick="login()">
