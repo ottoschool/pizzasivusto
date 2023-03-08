@@ -409,11 +409,13 @@ button {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: rgba(0,0,0,0);
-  min-width: 160px;
+  background-color:#151812;
+  min-width: 10px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0);
   z-index: 1;
-  padding-right: 100px;
+  border: none;
+  border-radius: 5px;
+  width: min-content;
 }
 
 /* Links inside the dropdown */
@@ -426,6 +428,18 @@ button {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown-content h1 {
+    color: white;
+    font-size:medium;
+    text-align: center;
+}
+
+.dropdown-content h2 {
+    color: white;
+    font-size: smaller;
+    text-align: left;
+}
 
 /* Submit button*/
 #submitbtn {
@@ -515,6 +529,10 @@ button {
 
 .login_menu input::placeholder {
     color: #000;
+}
+
+.loging_form {
+    visibility: visible;
 }
 
 .padding_10 {
