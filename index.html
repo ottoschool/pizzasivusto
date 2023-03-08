@@ -35,6 +35,7 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesoeet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <script text="text/javascript" language="javascript" src="js/account.js"></script>
    </head>
    <body>
       <!-- banner bg main start -->
@@ -46,7 +47,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-sm-12">
-                     <div class="logo"><a href="index.html"><img src="images/pizzalogo.png"></a></div>
+                     <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
                   </div>
                </div>
             </div>
@@ -68,19 +69,28 @@
                      
                   </div>
                   <div class="header_box">
-                        <div class="login_menu">
-                           <ul>
-                              <li><a href="#">
-                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                 <span class="padding_10">Cart</span></a>
-                              </li>
-                              <li><a href="#">
-                                 <i class="fa fa-user" aria-hidden="true"></i>
-                                 <span class="padding_10">Cart</span></a>
-                              </li>
-                           </ul>
-                        </div>
+                     <div class="login_menu">
+                        <ul>
+                           <li><a href="#">
+                              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                              <span class="padding_10">Cart</span></a>
+                           </li>
+                           <li>
+                              <button onclick="loginDropdown()" class="dropbtn"><img src="images/user-icon.png"/>Kirjaudu</button>
+                              <div id="Dropdown" class="dropdown-content">
+                                 <form action="/js/account.js" class="login_form">
+                                    <input type="text" id="login_username" name="login_username" placeholder="Käyttäjänimi">
+                                    <input type="password" id="login_password" name="login_password" placeholder="Salasana">
+                                    <div class="button_container">
+                                       <input type="button" id="submitbtn" value="Rekisteröinti" onclick="location.href='register.html';" />
+                                       <input id="submitbtn" type="submit" value="Kirjaudu">
+                                    </div>
+                                 </form>
+                              </div>
+                           </li>
+                        </ul>
                      </div>
+                  </div>
                </div>
             </div>
          </div>
@@ -118,8 +128,8 @@
                               <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
                               <div class="tshirt_img"><img src="images/"></div>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                 <div class="seemore_bt"><a href="#">See More</a></div>
+                                 <div class="buy_bt"><a href="#">Tilaa</a></div>
+                                 <div class="seemore_bt"><a href="#">Lisää</a></div>
                               </div>
                            </div>
                         </div><div class="col-lg-4 col-sm-4">
@@ -128,8 +138,8 @@
                               <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
                               <div class="tshirt_img"><img src="images/"></div>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                 <div class="seemore_bt"><a href="#">See More</a></div>
+                                 <div class="buy_bt"><a href="#">Tilaa</a></div>
+                                 <div class="seemore_bt"><a href="#">Lisää</a></div>
                               </div>
                            </div>
                         </div><div class="col-lg-4 col-sm-4">
@@ -138,8 +148,8 @@
                               <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
                               <div class="tshirt_img"><img src="images/"></div>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                 <div class="seemore_bt"><a href="#">See More</a></div>
+                                 <div class="buy_bt"><a href="#">Tilaa</a></div>
+                                 <div class="seemore_bt"><a href="#">Lisää</a></div>
                               </div>
                            </div>
                         </div><div class="col-lg-4 col-sm-4">
@@ -148,8 +158,8 @@
                               <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
                               <div class="tshirt_img"><img src="images/"></div>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                 <div class="seemore_bt"><a href="#">See More</a></div>
+                                 <div class="buy_bt"><a href="#">Tilaa</a></div>
+                                 <div class="seemore_bt"><a href="#">Lisää</a></div>
                               </div>
                            </div>
                         </div>
@@ -159,8 +169,8 @@
                               <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
                               <div class="tshirt_img"><img src="images/"></div>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                 <div class="seemore_bt"><a href="#">See More</a></div>
+                                 <div class="buy_bt"><a href="#">Tilaa</a></div>
+                                 <div class="seemore_bt"><a href="#">Lisää</a></div>
                               </div>
                            </div>
                         </div>
@@ -170,8 +180,8 @@
                               <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
                               <div class="tshirt_img"><img src="images/"></div>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                 <div class="seemore_bt"><a href="#">See More</a></div>
+                                 <div class="buy_bt"><a href="#">Tilaa</a></div>
+                                 <div class="seemore_bt"><a href="#">Lisää</a></div>
                               </div>
                            </div>
                         </div>
@@ -190,8 +200,8 @@
                               <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
                               <div class="tshirt_img"><img src="images/tshirt-img.png"></div>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                 <div class="seemore_bt"><a href="#">See More</a></div>
+                                 <div class="buy_bt"><a href="#">Tilaa</a></div>
+                                 <div class="seemore_bt"><a href="#">Lisää</a></div>
                               </div>
                            </div>
                         </div>
@@ -201,8 +211,8 @@
                               <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
                               <div class="tshirt_img"><img src="images/dress-shirt-img.png"></div>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                 <div class="seemore_bt"><a href="#">See More</a></div>
+                                 <div class="buy_bt"><a href="#">Tilaa</a></div>
+                                 <div class="seemore_bt"><a href="#">Lisää</a></div>
                               </div>
                            </div>
                         </div>
@@ -212,8 +222,8 @@
                               <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
                               <div class="tshirt_img"><img src="images/women-clothes-img.png"></div>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                 <div class="seemore_bt"><a href="#">See More</a></div>
+                                 <div class="buy_bt"><a href="#">Tilaa</a></div>
+                                 <div class="seemore_bt"><a href="#">Lisää</a></div>
                               </div>
                            </div>
                         </div>
@@ -232,8 +242,8 @@
                               <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
                               <div class="tshirt_img"><img src="images/tshirt-img.png"></div>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                 <div class="seemore_bt"><a href="#">See More</a></div>
+                                 <div class="buy_bt"><a href="#">Tilaa</a></div>
+                                 <div class="seemore_bt"><a href="#">Lisää</a></div>
                               </div>
                            </div>
                         </div>
@@ -243,8 +253,8 @@
                               <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
                               <div class="tshirt_img"><img src="images/dress-shirt-img.png"></div>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                 <div class="seemore_bt"><a href="#">See More</a></div>
+                                 <div class="buy_bt"><a href="#">Tilaa</a></div>
+                                 <div class="seemore_bt"><a href="#">Lisää</a></div>
                               </div>
                            </div>
                         </div>
@@ -254,8 +264,8 @@
                               <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
                               <div class="tshirt_img"><img src="images/women-clothes-img.png"></div>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                 <div class="seemore_bt"><a href="#">See More</a></div>
+                                 <div class="buy_bt"><a href="#">Tilaa</a></div>
+                                 <div class="seemore_bt"><a href="#">Lisää</a></div>
                               </div>
                            </div>
                         </div>
@@ -281,8 +291,8 @@
                                  <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
                                  <div class="electronic_img"><img src="images/laptop-img.png"></div>
                                  <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
+                                    <div class="buy_bt"><a href="#">Tilaa</a></div>
+                                    <div class="seemore_bt"><a href="#">Lisää</a></div>
                                  </div>
                               </div>
                            </div>
@@ -292,8 +302,8 @@
                                  <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
                                  <div class="electronic_img"><img src="images/mobile-img.png"></div>
                                  <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
+                                    <div class="buy_bt"><a href="#">Tilaa</a></div>
+                                    <div class="seemore_bt"><a href="#">Lisää</a></div>
                                  </div>
                               </div>
                            </div>
@@ -303,8 +313,8 @@
                                  <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
                                  <div class="electronic_img"><img src="images/computer-img.png"></div>
                                  <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
+                                    <div class="buy_bt"><a href="#">Tilaa</a></div>
+                                    <div class="seemore_bt"><a href="#">Lisää</a></div>
                                  </div>
                               </div>
                            </div>
@@ -324,7 +334,7 @@
                                  <div class="electronic_img"><img src="images/laptop-img.png"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="#">Tilaa</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
+                                    <div class="seemore_bt"><a href="#">Lisää</a></div>
                                  </div>
                               </div>
                            </div>
@@ -335,7 +345,7 @@
                                  <div class="electronic_img"><img src="images/mobile-img.png"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="#">Tilaa</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
+                                    <div class="seemore_bt"><a href="#">Lisää</a></div>
                                  </div>
                               </div>
                            </div>
@@ -346,7 +356,7 @@
                                  <div class="electronic_img"><img src="images/computer-img.png"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="#">Tilaa</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
+                                    <div class="seemore_bt"><a href="#">Lisää</a></div>
                                  </div>
                               </div>
                            </div>
@@ -366,7 +376,7 @@
                                  <div class="electronic_img"><img src="images/laptop-img.png"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="#">Tilaa</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
+                                    <div class="seemore_bt"><a href="#">Lisää</a></div>
                                  </div>
                               </div>
                            </div>
@@ -377,7 +387,7 @@
                                  <div class="electronic_img"><img src="images/mobile-img.png"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="#">Tilaa</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
+                                    <div class="seemore_bt"><a href="#">Lisää</a></div>
                                  </div>
                               </div>
                            </div>
@@ -388,7 +398,7 @@
                                  <div class="electronic_img"><img src="images/computer-img.png"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="#">Tilaa</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
+                                    <div class="seemore_bt"><a href="#">Lisää</a></div>
                                  </div>
                               </div>
                            </div>
@@ -403,7 +413,7 @@
       <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
-            <div class="footer_logo"><a href="index.html"><img src="images/.png"></a></div>
+            <div class="footer_logo"><a href="index.html"><img src="images/logo.png"></a></div>
          </div>
       </div>
       <!-- footer section end -->
