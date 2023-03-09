@@ -766,7 +766,7 @@ a:hover {
 }
 
 #box_main1 {
-    background-image: images/amerikkalainen pizza.jpg;
+    background-image: url("images/amerikkalainen-pizza.jpg");
 }
 
 .btn_main {
