@@ -761,12 +761,15 @@ a:hover {
 .pizza_img {
     width: 100%;
     text-align: center;
-    margin: 50px 0px;
-    min-height: 370px;
+    margin: 5px 0px;
 }
 
-#box_main1 {
-    background-image: url("images/amerikkalainen-pizza.jpg");
+.pizza_img img {
+    border-radius: 30%;
+}
+
+.pizza_img img:hover {
+    border-radius: 10%;
 }
 
 .btn_main {

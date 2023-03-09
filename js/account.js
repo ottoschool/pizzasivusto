@@ -64,7 +64,7 @@ function login() { // kirjautuminen
         }
     }else {
         document.getElementById("login_error_message").style.visibility = "visible"
-        document.getElementById("login_error_message").textContent = "Kirjautumisessa tapahtui virhe! Käyttäjänimi tai salasana puuttuu."
+        document.getElementById("login_error_message").textContent = "Käyttäjänimi tai salasana puuttuu."
     }
 
 }
