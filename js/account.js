@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", main);
 
 function main() {
-    disableErrorMsg()
     // jos on jo kirjauduttu sisään niin näytetään tervetuloa viesti
     if (isLoggedIn()) {
         try{
             document.getElementById("register_form").style.display = "none"
             document.getElementById("register_status").textContent = `Tervetuloa ${localStorage.getItem("Käyttäjänimi")}!`
         }catch{
-            // koska tämä koodi pyöritetään myös pääsivulla niin vältetään virhekoodi
+            document.getElementById("dropbtn").textContent = localStorage.getItem("Käyttäjänimi").toUpperCase()
         }
     }
 }
@@ -25,24 +24,24 @@ function isLoggedIn() { // returnaa true jos on jo kirjauduttu sisään, muuten 
 }
 
 
-function disableErrorMsg() { // piilottaa virheviestin ettei sitä näytetä turhaan
-    try{
-        document.getElementById("register_error_message").style.display = "none"
-    }catch{
-        // koska tämä koodi pyöritetään myös pääsivulla niin vältetään virhekoodi
-    }
-}
-
 // togglee kirjautumis valikon pääsivulla
 function loginDropdown() {
     document.getElementById("Dropdown").classList.toggle("show");
+    updateAccountStatus()
+}
+
+function updateAccountStatus() {
     if (isLoggedIn()) {
-        document.getElementById("login_message").textContent = `Tervetuloa ${localStorage.getItem("Käyttäjänimi")}!`
+        document.getElementById("login_message").textContent = `käyttäjänä ${localStorage.getItem("Käyttäjänimi")}`
         document.getElementById("logged_in_content").style.display = ""
         document.getElementById("login_form").style.display = "none"
+        document.getElementById("Dropdown").style.width = "auto"
+        document.getElementById("dropbtn").textContent = localStorage.getItem("Käyttäjänimi").toUpperCase()
     }else {
         document.getElementById("logged_in_content").style.display = "none"
         document.getElementById("login_form").style.display = "" 
+        document.getElementById("Dropdown").style.width = "min-content"
+        document.getElementById("dropbtn").textContent = "Kirjaudu"
     }
 }
 
@@ -57,10 +56,15 @@ function login() { // kirjautuminen
 
             localStorage.setItem("kirjautunut", "sisään");
             document.getElementById("login_form").style.display = "none"
-            document.getElementById("Dropdown").style.width = "auto"
-            document.getElementById("login_message").textContent += username
+            updateAccountStatus()
             
+        }else {
+            document.getElementById("login_error_message").style.visibility = "visible"
+            document.getElementById("login_error_message").textContent = "Väärä käyttäjänimi tai salasana"
         }
+    }else {
+        document.getElementById("login_error_message").style.visibility = "visible"
+        document.getElementById("login_error_message").textContent = "Käyttäjänimi tai salasana puuttuu."
     }
 
 }
@@ -70,8 +74,7 @@ function logOut() {
     localStorage.setItem("Käyttäjänimi", "")
     localStorage.setItem("Salasana", "")
 
-    document.getElementById("login_form").style.display = ""
-    document.getElementById("Dropdown").style.width = "min-content"
+    updateAccountStatus()
 }
 
 function register() { // rekisteröinti
