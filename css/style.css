@@ -741,6 +741,14 @@ a:hover {
     margin-bottom: 20px;
 }
 
+.ainesosia_text {
+    display: none;
+}
+
+.box_main:hover .ainesosia_text{
+    display: block;
+}
+
 .shirt_text {
     width: 100%;
     font-size: 20px;
