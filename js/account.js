@@ -71,8 +71,6 @@ function login() { // kirjautuminen
 
 function logOut() {
     localStorage.setItem("kirjautunut", "ulos");
-    localStorage.setItem("Käyttäjänimi", "")
-    localStorage.setItem("Salasana", "")
 
     updateAccountStatus()
 }
