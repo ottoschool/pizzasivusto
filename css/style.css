@@ -766,6 +766,8 @@ a:hover {
 
 .pizza_img img {
     border-radius: 30%;
+    max-width: 90%;
+    max-height: 90%;
 }
 
 .pizza_img img:hover {
@@ -1148,17 +1150,62 @@ input.mail_bt::placeholder {
     height: 80%;
     border: none;
     border-radius: 20px;
+
 }
 
 .close_button {
     position: relative;
     width: 20px;
     height: 10px;
-    left: 95%;
+    left: 96.5%;
     top: 2%;
     
 }
 
 .close_button button{
     background-color: rgba(0,0,0,0);
+}
+
+#overlay .container {
+    max-width: 70%;
+    text-align: left;
+    margin: 0px;
+
+}
+
+#overlay_block {
+    overflow: hidden;
+    overflow-y: auto;   
+}
+
+#overlay_block img {
+    max-width: 50%;
+    max-height: 50px;
+    margin-top: 8px;
+    border-radius: 10px;
+}
+
+#overlay_block li {
+    display: inline-flex;
+    vertical-align:top;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 1px;
+    padding: 10px;
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 80px;
+}
+
+#overlay_block ul {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }  
+
+#overlay .scrollbox {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    display: block;
 }
