@@ -17,10 +17,11 @@ class Pizza{
     }
 }
 
+fillings = init_fillings()
+pizzas = init_pizzas()
+
 function main() {
 
-    fillings = init_fillings()
-    pizzas = init_pizzas(fillings)
 
 }
 
@@ -53,7 +54,7 @@ function init_fillings() {
     return fillings
 }
 
-function init_pizzas(fillings) {
+function init_pizzas() {
     pizzas = {
         pekonigrillipizza : new Pizza(
             "Pekoni Grilli Pizza",
@@ -67,7 +68,7 @@ function init_pizzas(fillings) {
             ]
 
         ),
-        
+
         kanapizza : new Pizza(
             "Kana Pizza",
             "images/Kana-pizza.jpg",
