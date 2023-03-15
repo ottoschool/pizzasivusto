@@ -20,6 +20,7 @@ class Pizza{
 function main() {
 
     fillings = init_fillings()
+    pizzas = init_pizzas(fillings)
 
 }
 
@@ -47,9 +48,62 @@ function init_fillings() {
         gorgonzolajuusto : new Filling("Gorgonzola-juusto",1),
         persilija : new Filling("Persilija",),
         pepperoni : new Filling("Pepperoni",1),
+        valkosipulikastike : new Filling("Valkosipulikastike")
     }
     return fillings
+}
+
+function init_pizzas(fillings) {
+    pizzas = {
+        pekonigrillipizza : new Pizza(
+            "Pekoni Grilli Pizza",
+            "images/pekoni-grillipizza.jpg",
+            10,
+            [
+                fillings.karamellisoitu_sipuli, 
+                fillings.pekoni, 
+                fillings.mozzarellajuusto, 
+                fillings.bbq_kastike
+            ]
+
+        ),
+        
+        kanapizza : new Pizza(
+            "Kana Pizza",
+            "images/Kana-pizza.jpg",
+            10,
+            [
+                fillings.kana, 
+                fillings.tomaatti, 
+                fillings.karamellisoitu_sipuli, 
+                fillings.basilika,
+                fillings.valkosipulikastike
+            ],
+        ),
+
+        juustopizza : new Pizza(
+            "Juusto Pizza",
+            "images/juustopizza.webp",
+            10,
+            [
+                fillings.mozzarellajuusto, 
+                fillings.parmesaanijuusto, 
+                fillings.valkosipulijuusto, 
+            ],
+        ),
+
+        juustopizza : new Pizza(
+            "Juusto Pizza",
+            "images/juustopizza.webp",
+            10,
+            [
+                fillings.mozzarellajuusto, 
+                fillings.parmesaanijuusto, 
+                fillings.valkosipulijuusto, 
+            ],
+        ),
     }
+}
 
 function open_ordering_overlay() {
     document.getElementById("overlay").style.display = "block"
