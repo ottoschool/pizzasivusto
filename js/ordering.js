@@ -45,11 +45,11 @@ function init_fillings() {
         kinkku : new Filling("Kinkku",1),
         kebab : new Filling("Kebab",1),
         sipuli : new Filling("Sipuli",),
-        tuplajuusto : new Filling("Tuplajuusto",),
+        tuplajuusto : new Filling("Tuplajuusto",1),
         gorgonzolajuusto : new Filling("Gorgonzola-juusto",1),
-        persilija : new Filling("Persilija",),
+        persilija : new Filling("Persilija",1),
         pepperoni : new Filling("Pepperoni",1),
-        valkosipulikastike : new Filling("Valkosipulikastike")
+        valkosipulikastike : new Filling("Valkosipulikastike",1)
     }
     return fillings
 }
