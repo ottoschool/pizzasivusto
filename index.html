@@ -124,25 +124,125 @@
 
       <!-- ordering overlay start -->
       <div id="overlay">
-         <div id="overlay_block">
+         <div class="overlay_block">
             <div class="close_button">
                <button onclick="close_ordering_overlay()"><img src="images/close-symbol.png"></button>
             </div>
+            <div class="shoppingcart_box">
+               <h1>Ostoskori</h1>
+               <ul id="shoppingcart">
+
+               </ul>
+            </div>
             <div class="container">
+               
                <div class="scrollbox">
                   <ul>
-                     <li><img src="images/pekoni-grillipizza.jpg" alt=""><p>Pekoni Grilli Pizza</p><p>10€</p></li>
-                     <li><img src="images/Kana-pizza.jpg" alt=""><p>Kana Pizza</p><p>10€</p></li>
-                     <li><img src="images/juustopizza.webp" alt=""><p>Juusto Pizza</p><p>10e</p></li>
-                     <li><img src="images/Kreikkalainen-pizza.jpg" alt=""><p>Kreikkalainen Pizza</p><p>10€</p></li>
-                     <li><img src="images/margarita-pizza.jpg" alt=""><p>Margarita Pizza</p><p>10€</p></li>
-                     <li><img src="images/Opera-pizza.jpg" alt=""><p>Opera Pizza</p><p>10€</p></li>
-                     <li><img src="images/Kebab-pizza.jpg" alt=""><p>Kebab Pizza</p><p>10€</p></li>
-                     <li><img src="images/Italialainen-pizza.jpg" alt=""><p>Italialainen Pizza</p><p>10€</p></li>
-                     <li><img src="images/Gorgonzola-pizza.jpg" alt=""><p>Gorgonzola Pizza</p><p>10€</p></li>
-                     <li><img src="images/Tropicana-pizza.jpg" alt=""><p>Tropicana Pizza</p><p>10€</p></li>
-                     <li><img src="images/katkarapu-ja-parmesaanipizzaa.jpg" alt=""><p>Katkarapu ja parmesaani Pizza</p><p>10€</p></li>
-                     <li><img src="images/kinkkupizza.jpg" alt=""><p>Kinkku Pizza</p><p>10€</p></li>
+                     <li>
+                        <div class="pizza_info">
+
+                           <img src="images/pekoni-grillipizza.jpg" alt="">
+                           <p>Pekoni Grilli Pizza</p><p>10€</p>
+                           <div class="ordering_menu">
+                              <button id="add_button" onclick="addItem('pekoni grilli pizza')">Lisää</button>
+                           </div>
+                        </div>
+                        <div class="lisataytteet">
+                           <input type="checkbox" id="valkosipuli" value="valkosipuli">
+                           <label for="valkosipuli">valkosipuli</label>
+                           
+                           <input type="checkbox" id="gluteeniton" value="gluteeniton">
+                           <label for="gluteeniton">gluteeniton pohja</label>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="images/Kana-pizza.jpg" alt="">
+                        <p>Kana Pizza</p><p>10€</p>
+                        <div class="ordering_menu">
+                           <button id="add_button"><img src="images/plus-sign-button.png" alt=""></button>
+                           <button id="minus_button"><img src="images/minus-sign-button.png" alt=""></button>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="images/juustopizza.webp" alt="">
+                        <p>Juusto Pizza</p><p>10€</p>
+                        <div class="ordering_menu">
+                           <button id="add_button"><img src="images/plus-sign-button.png" alt=""></button>
+                           <button id="minus_button"><img src="images/minus-sign-button.png" alt=""></button>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="images/Kreikkalainen-pizza.jpg" alt="">
+                        <p>Kreikkalainen Pizza</p><p>10€</p>
+                        <div class="ordering_menu">
+                           <button id="add_button"><img src="images/plus-sign-button.png" alt=""></button>
+                           <button id="minus_button"><img src="images/minus-sign-button.png" alt=""></button>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="images/margarita-pizza.jpg" alt="">
+                        <p>Margarita Pizza</p><p>10€</p>
+                        <div class="ordering_menu">
+                           <button id="add_button"><img src="images/plus-sign-button.png" alt=""></button>
+                           <button id="minus_button"><img src="images/minus-sign-button.png" alt=""></button>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="images/Opera-pizza.jpg" alt="">
+                        <p>Opera Pizza</p><p>10€</p>
+                        <div class="ordering_menu">
+                           <button id="add_button"><img src="images/plus-sign-button.png" alt=""></button>
+                           <button id="minus_button"><img src="images/minus-sign-button.png" alt=""></button>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="images/Kebab-pizza.jpg" alt="">
+                        <p>Kebab Pizza</p><p>10€</p>
+                        <div class="ordering_menu">
+                           <button id="add_button"><img src="images/plus-sign-button.png" alt=""></button>
+                           <button id="minus_button"><img src="images/minus-sign-button.png" alt=""></button>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="images/Italialainen-pizza.jpg" alt="">
+                        <p>Italialainen Pizza</p><p>10€</p>
+                        <div class="ordering_menu">
+                           <button id="add_button"><img src="images/plus-sign-button.png" alt=""></button>
+                           <button id="minus_button"><img src="images/minus-sign-button.png" alt=""></button>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="images/Gorgonzola-pizza.jpg" alt="">
+                        <p>Gorgonzola Pizza</p><p>10€</p>
+                        <div class="ordering_menu">
+                           <button id="add_button"><img src="images/plus-sign-button.png" alt=""></button>
+                           <button id="minus_button"><img src="images/minus-sign-button.png" alt=""></button>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="images/Tropicana-pizza.jpg" alt="">
+                        <p>Tropicana Pizza</p><p>10€</p>
+                        <div class="ordering_menu">
+                           <button id="add_button"><img src="images/plus-sign-button.png" alt=""></button>
+                           <button id="minus_button"><img src="images/minus-sign-button.png" alt=""></button>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="images/katkarapu-ja-parmesaanipizzaa.jpg" alt="">
+                        <p>Katkarapu ja parmesaani Pizza</p><p>10€</p>
+                        <div class="ordering_menu">
+                           <button id="add_button"><img src="images/plus-sign-button.png" alt=""></button>
+                           <button id="minus_button"><img src="images/minus-sign-button.png" alt=""></button>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="images/kinkkupizza.jpg" alt="">
+                        <p>Kinkku Pizza</p><p>10€</p>
+                        <div class="ordering_menu">
+                           <button id="add_button"><img src="images/plus-sign-button.png" alt=""></button>
+                           <button id="minus_button"><img src="images/minus-sign-button.png" alt=""></button>
+                        </div>
+                     </li>
                </ul>
             </div>
             </div>
@@ -174,7 +274,7 @@
                               <h4 class="shirt_text">Kana Pizza</h4>
                               <p class="Hinta_text">Hinta  <span style="color: #262626;">10€</span></p>
                               <div class="pizza_img"><img src="images/Kana-pizza.jpg"></div>
-                              <h6 class="ainesosia_text">Broilerin paistisuikaletta, tomaattia, karamellisoitua sipulia, basilikanlehtiä ja valkokastiketta</h6>
+                              <h6 class="ainesosia_text">Broilerin paistisuikaletta, tomaattia, karamellisoitua sipulia, basilikanlehtiä ja valkosipulikastiketta</h6>
                               <div class="btn_main">
                                  <div class="buy_bt"><a href="#">Lisää Tilaukseen</a></div>
                               </div>
@@ -207,7 +307,7 @@
                               <h4 class="shirt_text">Margherita pizza</h4>
                               <p class="Hinta_text">Hinta  <span style="color: #262626;">10€</span></p>
                               <div class="pizza_img"><img src="images/margarita-pizza.jpg"></div>
-                              <h6 class="ainesosia_text">Punainen kastiketta, tuoretta mozzarellaa, basilikaa, oreganoa ja tomaattia</h6>
+                              <h6 class="ainesosia_text">tuoretta mozzarellaa, basilikaa, oreganoa ja tomaattia</h6>
                               <div class="btn_main">
                                  <div class="buy_bt"><a href="#">Lisää Tilaukseen</a></div>
                               </div>
@@ -218,7 +318,7 @@
                               <h4 class="shirt_text">Opera Pizza</h4>
                               <p class="Hinta_text">Hinta  <span style="color: #262626;">10€</span></p>
                               <div class="pizza_img"><img src="images/Opera-pizza.jpg"></div>
-                              <h6 class="ainesosia_text">Oliiveja, rucola, sieniä, tonnikala, kinkku ja viulupäävihreät</h6>
+                              <h6 class="ainesosia_text">Oliiveja, rucola, sieniä, tonnikala, kinkku</h6>
                               <div class="btn_main">
                                  <div class="buy_bt"><a href="#">Lisää Tilaukseen</a></div>
                               </div>
@@ -229,7 +329,7 @@
                               <h4 class="shirt_text">Kebab Pizza</h4>
                               <p class="Hinta_text">Hinta  <span style="color: #262626;">10€</span></p>
                               <div class="pizza_img"><img src="images/Kebab-pizza.jpg"></div>
-                              <h6 class="ainesosia_text">Kebab, tomaatti, sipuli, juusto ja kebabkastike</h6>
+                              <h6 class="ainesosia_text">Kebab, tomaatti, sipuli, tuplajuusto ja kebabkastike</h6>
                               <div class="btn_main">
                                  <div class="buy_bt"><a href="#">Lisää Tilaukseen</a></div>
                               </div>
@@ -240,7 +340,7 @@
                               <h4 class="shirt_text">Italialainen Pizza</h4>
                               <p class="Hinta_text">Hinta  <span style="color: #262626;">10€</span></p>
                               <div class="pizza_img"><img src="images/Italialainen-pizza.jpg"></div>
-                              <h6 class="ainesosia_text">Rucola, tomaatti, tomaattikastike ja mozzarellajuusto</h6>
+                              <h6 class="ainesosia_text">Rucola, tomaatti ja mozzarellajuusto</h6>
                               <div class="btn_main">
                                  <div class="buy_bt"><a href="#">Lisää Tilaukseen</a></div>
                               </div>
