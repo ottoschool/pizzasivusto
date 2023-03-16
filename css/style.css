@@ -1325,11 +1325,22 @@ input.mail_bt::placeholder {
 }
 
 #shoppingcart {
-    text-align: right;
+    text-align: left;
+    align-items: baseline;
 }
 
 #shoppingcart li {
-    text-align: right;
+    text-align: left;
+}
+
+#shoppingcart button {
+    background-color: rgba(0,0,0,0);
+}
+
+#shoppingcart img {
+    min-width: 0;
+    width: 20px;
+    padding-bottom: 6px;
 }
 
 .pizza_info {

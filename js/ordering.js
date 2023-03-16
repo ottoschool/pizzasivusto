@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", main);
-class Filling{
+class Filling{ // täytteiden classi
     constructor(name,price){
         this.name = name
         this.price = price
     }
 }
-class Pizza{
+class Pizza{ // pizza classi
     constructor(name, image, price, id=-1, fillings,gluteeniton=false,valkosipuli=false){
         this.name = name
         this.image = image
@@ -23,11 +23,12 @@ var fillings = init_fillings()
 var pizzas = init_pizzas()
 
 function main() {
+    // tallennetaan vaan pohja ostoskorille 
     orders = JSON.stringify([])
     localStorage.setItem("orders",orders)
 }
 
-function init_fillings() {
+function init_fillings() { // täytteet
     fillings = {
         karamellisoitu_sipuli : new Filling("Karamellisoitu sipuli", 1),
         pekoni : new Filling("Pekoni",1),
@@ -65,7 +66,7 @@ function init_fillings() {
     return fillings
 }
 
-function init_pizzas() {
+function init_pizzas() { // pizzat
     pizzas = [
         
         new Pizza(
@@ -217,23 +218,94 @@ function countDuplicates(array, value) {
     return count
 }
 
-function addItem(name) {
+function removeItem(name) {
+    // etsii oikean nimisen pizzan ja valitsee sen pizza objectiksi
     var pizza = pizzas.filter(obj => {
         return obj.name === name
     })
     pizza = pizza[0]
 
+    // haetaan ostoskorin muisti localstoragesta
     var orders = JSON.parse(localStorage.getItem("orders"))
 
+    //tarkistetaan onko gluteenitonta tai valkosipulia valittu ja päivitetään pizzan tietoihin
+    document.getElementById(`gluteeniton_${pizza.id}`).checked ? pizza.gluteeniton = true:pizza.gluteeniton = false
+    document.getElementById(`valkosipuli_${pizza.id}`).checked ? pizza.valkosipuli = true:pizza.valkosipuli = false
+
+    //luodaan html elementit
+    let id_tag = document.createAttribute("id")
+    id_tag.value = `pizza_${pizza.id}`
+    let minus_symbol = '<img src="images/minus-sign-button.png">'
+    let remove_button = document.createElement("button")
+    remove_button.onclick = function() {
+        removeItem(name)
+    }
+    remove_button.innerHTML = minus_symbol
+
+    message = ""
+    // tehdään tarvittavat toimet gluteenittoman ja valkosipulin kanssa
+    if (pizza.gluteeniton) {
+        message = "Gluteeniton "
+        id_tag.value += "_G"
+        pizza.price += 2
+    }
+
+    message += `${pizza.name} `
+
+    if (pizza.valkosipuli) {
+        message += "valkosipulilla "
+        id_tag.value += "_V"
+
+    }
+    let item = document.getElementById(id_tag.value)
+    item.innerHTML = message
+
+    // lasketaan toistuvat pizzat
+    let duplicates = countDuplicates(orders, item.innerHTML)
+    // jos yhtä pizzaa löytyy yhtä useampaa niin lasketaan pizzojen määrä uuden lisäämisen sijaan
+    if (duplicates > 1) {
+        orders.splice(orders.indexOf(item.innerHTML),1)
+        duplicates -= 1
+        item.innerHTML = `x${duplicates} ` + item.innerHTML
+        item.innerHTML += `${pizza.price*(duplicates)} €`
+        document.getElementById(id_tag.value).appendChild(remove_button)
+
+    }else {
+        orders.splice(orders.indexOf(item.innerHTML),1)
+        document.getElementById("shoppingcart").removeChild(item)
+
+    }
+    //tallennetaan localstorageen
+    localStorage.setItem("orders", JSON.stringify(orders))
+}
+
+function addItem(name) {
+    // etsii oikean nimisen pizzan ja valitsee sen pizza objectiksi
+    var pizza = pizzas.filter(obj => {
+        return obj.name === name
+    })
+    pizza = pizza[0]
+
+    // haetaan ostoskorin muisti localstoragesta
+    var orders = JSON.parse(localStorage.getItem("orders"))
+
+    //tarkistetaan onko gluteenitonta tai valkosipulia valittu ja päivitetään pizzan tietoihin
     document.getElementById(`gluteeniton_${pizza.id}`).checked ? pizza.gluteeniton = true:pizza.gluteeniton = false
     document.getElementById(`valkosipuli_${pizza.id}`).checked ? pizza.valkosipuli = true:pizza.valkosipuli = false
     
-    
+    //luodaan html elementit
     let id_tag = document.createAttribute("id")
     id_tag.value = `pizza_${pizza.id}`
-    
     let item = document.createElement("li")
+    let minus_symbol = '<img src="images/minus-sign-button.png">'
+    let remove_button = document.createElement("button")
+    remove_button.onclick = function() {
+        removeItem(name)
+    }
+    remove_button.innerHTML = minus_symbol
     
+    
+    // tehdään tarvittavat toimet gluteenittoman ja valkosipulin kanssa
     if (pizza.gluteeniton) {
         item.innerHTML = "Gluteeniton "
         id_tag.value += "_G"
@@ -249,25 +321,25 @@ function addItem(name) {
         id_tag.value += "_V"
 
     }
-
-    
-    
-    
     item.setAttributeNode(id_tag)
-
+    
+    // lasketaan toistuvat pizzat
     const duplicates = countDuplicates(orders, item.innerHTML)
+    // jos yhtä pizzaa löytyy yhtä useampaa niin lasketaan pizzojen määrä uuden lisäämisen sijaan
     if (duplicates !== 0) {
         orders.push(item.innerHTML)
         item.innerHTML = `x${duplicates+1} ` + item.innerHTML
         item.innerHTML += `${pizza.price*(duplicates+1)} €`
         document.getElementById(id_tag.value).innerHTML = item.innerHTML
+        document.getElementById(id_tag.value).appendChild(remove_button)
 
     }else {
         orders.push(item.innerHTML)
         item.innerHTML += `${pizza.price} €`
         document.getElementById("shoppingcart").appendChild(item)
+        document.getElementById(id_tag.value).appendChild(remove_button)
     }
-    
+    //tallennetaan localstorageen
     localStorage.setItem("orders", JSON.stringify(orders))
     
 }
