@@ -49,8 +49,7 @@ function init_fillings() {
         gorgonzolajuusto : new Filling("Gorgonzola-juusto",1),
         persilija : new Filling("Persilija",1),
         pepperoni : new Filling("Pepperoni",1),
-        valkosipulikastike : new Filling("Valkosipulikastike",1)
-        valkosipulikastike : new Filling("Valkosipulikastike",0),
+        valkosipulikastike : new Filling("Valkosipulikastike",1),
         paprika : new Filling("Paprika",1),
         sieni : new Filling("Sieni",1),
         kebabkastike : new Filling("Kebabkastike",0),
