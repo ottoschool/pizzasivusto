@@ -108,10 +108,11 @@ function init_pizzas() {
             ],
         ),
 
-        kreikkalainenpizza : new Pizza(
+         new Pizza(
             "Kreikkalainen Pizza",
             "images/Kreikkalainen-pizza.jpg",
             10,
+            4,
             [
                 fillings.mozzarellajuusto, 
                 fillings.sipuli, 
@@ -123,10 +124,11 @@ function init_pizzas() {
             ],
         ),
         
-        margheritapizza : new Pizza(
+        new Pizza(
             "Margherita Pizza",
             "images/margarita-pizza.jpg",
             10,
+            5,
             [
                 fillings.mozzarellajuusto, 
                 fillings.oregano, 
@@ -135,10 +137,11 @@ function init_pizzas() {
             ],
         ),
 
-        operapizza : new Pizza(
+        new Pizza(
             "Opera Pizza",
             "images/Opera-pizza.jpg",
             10,
+            6,
             [
                 fillings.oliivi, 
                 fillings.rucola, 
@@ -148,10 +151,11 @@ function init_pizzas() {
             ],
         ),
 
-        kebabpizza : new Pizza(
+        new Pizza(
             "Kebab Pizza",
             "images/Kebab-pizza.jpg",
             10,
+            7,
             [
                 fillings.kebab, 
                 fillings.sipuli, 
@@ -161,10 +165,11 @@ function init_pizzas() {
             ],
         ),
 
-        italialainenpizza : new Pizza(
+        new Pizza(
             "Italialainen Pizza",
             "images/Italialainen-pizza.jpg",
             10,
+            8,
             [
                 fillings.mozzarellajuusto, 
                 fillings.rucola, 
@@ -172,51 +177,19 @@ function init_pizzas() {
             ],
         ),
 
-        gorgonzolapizza : new Pizza(
-            "Gorgonzola Pizza",
-            "images/Gorgonzola-pizza.jpg",
-            10,
-            [
-                fillings.gorgonzolajuusto, 
-                fillings.sipuli, 
-                fillings.persilija,
-            ],
-        ),
-
-        tropicanapizza : new Pizza(
-            "Tropicana Pizza",
-            "images/Tropicana-pizza.jpg",
-            10,
-            [
-                fillings.mozzarellajuusto, 
-                fillings.sianlihaaviipaleita, 
-                fillings.ananas,
-            ],
-        ),
-
-        katkarapuparmesaanipizza : new Pizza(
-            "Katkarapu Parmesaani Pizza",
-            "images/katkarapu-ja-parmesaanipizzaa.jpg",
-            10,
-            [
-                fillings.mozzarellajuusto, 
-                fillings.katkarapu, 
-                fillings.parmesaanijuusto,
-                fillings.korppujauho
-            ],
-        ),
-
-        pepperonipizza : new Pizza(
+        new Pizza(
             "Pepperoni Pizza",
             "images/pepperoni-pizza.jpg",
             10,
+            9,
             [
                 fillings.mozzarellajuusto, 
                 fillings.pepperoni, 
                 fillings.mustapippuri,
             ],
         ),
-    }
+    ]
+    return pizzas
 }
 
 function open_ordering_overlay() {
@@ -245,29 +218,47 @@ function addItem(name) {
 
     var orders = JSON.parse(localStorage.getItem("orders"))
 
-    document.getElementById(`gluteeniton_${pizza.id}`).checked ? pizza.gluteeniton = true:"";
-    document.getElementById(`valkosipuli_${pizza.id}`).checked ? pizza.valkosipuli = true:"";
+    document.getElementById(`gluteeniton_${pizza.id}`).checked ? pizza.gluteeniton = true:pizza.gluteeniton = false
+    document.getElementById(`valkosipuli_${pizza.id}`).checked ? pizza.valkosipuli = true:pizza.valkosipuli = false
     
-    id_tag = document.createAttribute("id")
+    
+    let id_tag = document.createAttribute("id")
     id_tag.value = `pizza_${pizza.id}`
+    
+    let item = document.createElement("li")
+    
+    if (pizza.gluteeniton) {
+        item.innerHTML = "Gluteeniton "
+        id_tag.value += "_G"
+    }else {
+        item.innerHTML = ""
+    }
 
-    const item = document.createElement("li")
-
-    pizza.gluteeniton ? item.innerHTML = "Gluteeniton " : item.innerHTML = ""
     item.innerHTML += `${pizza.name} `
-    pizza.valkosipuli ? item.innerHTML += "valkosipulilla " : ""
-    item.innerHTML += `${pizza.price} €`
+
+    if (pizza.valkosipuli) {
+        item.innerHTML += "valkosipulilla "
+        id_tag.value += "_V"
+    }
+
+    
+    
+    
+    item.setAttributeNode(id_tag)
 
     const duplicates = countDuplicates(orders, item.innerHTML)
     if (duplicates !== 0) {
         orders.push(item.innerHTML)
-        item.innerHTML = `x${duplicates} ` + item.innerHTML
+        item.innerHTML = `x${duplicates+1} ` + item.innerHTML
+        item.innerHTML += `${pizza.price*(duplicates+1)} €`
+        document.getElementById(id_tag.value).innerHTML = item.innerHTML
 
     }else {
         orders.push(item.innerHTML)
+        item.innerHTML += `${pizza.price} €`
+        document.getElementById("shoppingcart").appendChild(item)
     }
     
     localStorage.setItem("orders", JSON.stringify(orders))
-    document.getElementById("shoppingcart").appendChild(item)
-    localStorage
+    
 }
