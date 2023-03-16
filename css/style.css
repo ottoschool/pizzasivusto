@@ -1165,11 +1165,11 @@ input.mail_bt::placeholder {
 }
 
 .close_button {
-    position: relative;
+    position: fixed;
     width: 20px;
     height: 10px;
-    left: 11%;
-    top: 2%;
+    left: 87%;
+    top: 13%;
     
 }
 
@@ -1309,7 +1309,6 @@ input.mail_bt::placeholder {
 }
 
 .overlay_block .shoppingcart_box {
-    overflow-y: auto;
     text-align: right;
     margin-right: 50px;
     margin-top: 10px;
