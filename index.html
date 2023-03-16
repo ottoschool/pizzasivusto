@@ -72,12 +72,12 @@
                   <div class="header_box">
                      <div class="login_menu">
                         <ul>
-                           <li><a href="#">
-                              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                              <span class="padding_10">Cart</span></a>
+                           <li>
+                              <button onclick="toggle_ordering_overlay()" class="dropbtn" id="dropbtn">
+                              <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</button>
                            </li>
                            <li>
-                              <button onclick="loginDropdown()" class="dropbtn" id="dropbtn"><img src="images/user-icon.png"/>Kirjaudu</button>
+                              <button onclick="loginDropdown()" class="dropbtn" id="dropbtn"><img src="images/user-icon.png"/> Kirjaudu</button>
                               <div id="Dropdown" class="dropdown-content">
                                  <form action="/js/account.js" class="login_form" id="login_form">
                                     <input type="text" id="login_username" name="login_username" placeholder="Käyttäjänimi">
@@ -133,6 +133,7 @@
                <ul id="shoppingcart">
 
                </ul>
+
             </div>
             <div class="container">
                
@@ -152,7 +153,7 @@
                            <label for="valkosipuli">Valkosipuli</label>
                            
                            <input type="checkbox" id="gluteeniton_1" value="gluteeniton">
-                           <label for="gluteeniton">Gluteeniton Pohja</label>
+                           <label for="gluteeniton">Gluteeniton Pohja (+2€)</label>
                         </form>
                      </li>
                      <li>
@@ -169,7 +170,7 @@
                            <label for="valkosipuli">Valkosipuli</label>
                            
                            <input type="checkbox" id="gluteeniton_2" value="gluteeniton">
-                           <label for="gluteeniton">Gluteeniton Pohja</label>
+                           <label for="gluteeniton">Gluteeniton Pohja (+2€)</label>
                         </div>
                      </li>
                      <li>
@@ -186,7 +187,7 @@
                            <label for="valkosipuli">Valkosipuli</label>
                            
                            <input type="checkbox" id="gluteeniton_3" value="gluteeniton">
-                           <label for="gluteeniton">Gluteeniton Pohja</label>
+                           <label for="gluteeniton">Gluteeniton Pohja (+2€)</label>
                         </div>
                      </li>
                      <li>
@@ -203,7 +204,7 @@
                            <label for="valkosipuli">Valkosipuli</label>
                            
                            <input type="checkbox" id="gluteeniton_4" value="gluteeniton">
-                           <label for="gluteeniton">Gluteeniton Pohja</label>
+                           <label for="gluteeniton">Gluteeniton Pohja (+2€)</label>
                         </div>
                      </li>
                      <li>
@@ -220,7 +221,7 @@
                            <label for="valkosipuli">Valkosipuli</label>
                            
                            <input type="checkbox" id="gluteeniton_5" value="gluteeniton">
-                           <label for="gluteeniton">Gluteeniton Pohja</label>
+                           <label for="gluteeniton">Gluteeniton Pohja (+2€)</label>
                         </div>
                      </li>
                      <li>
@@ -237,7 +238,7 @@
                            <label for="valkosipuli">Valkosipuli</label>
                            
                            <input type="checkbox" id="gluteeniton_6" value="gluteeniton">
-                           <label for="gluteeniton">Gluteeniton Pohja</label>
+                           <label for="gluteeniton">Gluteeniton Pohja (+2€)</label>
                         </div>
                      </li>
                      <li>
@@ -254,7 +255,7 @@
                            <label for="valkosipuli">Valkosipuli</label>
                            
                            <input type="checkbox" id="gluteeniton_7" value="gluteeniton">
-                           <label for="gluteeniton">Gluteeniton Pohja</label>
+                           <label for="gluteeniton">Gluteeniton Pohja (+2€)</label>
                         </div>
                      </li>
                      <li>
@@ -271,7 +272,7 @@
                            <label for="valkosipuli">Valkosipuli</label>
                            
                            <input type="checkbox" id="gluteeniton_8" value="gluteeniton">
-                           <label for="gluteeniton">Gluteeniton pohja</label>
+                           <label for="gluteeniton">Gluteeniton Pohja (+2€)</label>
                         </div>
                      </li>
                      <li>
@@ -288,7 +289,7 @@
                            <label for="valkosipuli">Valkosipuli</label>
                            
                            <input type="checkbox" id="gluteeniton_9" value="gluteeniton">
-                           <label for="gluteeniton">Gluteeniton Pohja</label>
+                           <label for="gluteeniton">Gluteeniton Pohja (+2€)</label>
                         </div>
                      </li>
                </ul>
@@ -312,20 +313,20 @@
                               <h4 class="shirt_text">Pekoni Grilli Pizza</h4>
                               <p class="Hinta_text">Hinta  <span style="color: #262626;">10€</span></p>
                               <div class="pizza_img"><img src="images/pekoni-grillipizza.jpg"></div>
-                              <h6 class="ainesosia_text">Karamellisoitua sipulia, pekonia, mozzarellajuustoa ja bbq-kastiketta</h6>
                               <div class="btn_main">                                 
-                                 <div class="buy_bt"><a href="#">Lisää Tilaukseen</a></div>
+                                 <div class="buy_bt"><button id="add_button" onclick="addItem('Pekoni Grilli Pizza');open_ordering_overlay()">Lisää Tilaukseen</button></div>
                               </div>
+                              <h6 class="ainesosia_text">Karamellisoitua sipulia, pekonia, mozzarellajuustoa ja bbq-kastiketta</h6>
                            </div>
                         </div><div class="col-lg-4 col-sm-4">
                            <div class="box_main" id="box_main">
                               <h4 class="shirt_text">Kana Pizza</h4>
                               <p class="Hinta_text">Hinta  <span style="color: #262626;">10€</span></p>
                               <div class="pizza_img"><img src="images/Kana-pizza.jpg"></div>
-                              <h6 class="ainesosia_text">Broilerin paistisuikaletta, tomaattia, karamellisoitua sipulia, basilikanlehtiä ja valkosipulikastiketta</h6>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Lisää Tilaukseen</a></div>
+                                 <div class="buy_bt"><button id="add_button" onclick="addItem('Kana Pizza');open_ordering_overlay()">Lisää Tilaukseen</button></div>
                               </div>
+                              <h6 class="ainesosia_text">Broilerin paistisuikaletta, tomaattia, karamellisoitua sipulia, basilikanlehtiä ja valkosipulikastiketta</h6>
                            </div>
                         </div>
                         <div class="col-lg-4 col-sm-4">
@@ -333,10 +334,10 @@
                               <h4 class="shirt_text">Juusto pizza</h4>
                               <p class="Hinta_text">Hinta  <span style="color: #262626;">10€</span></p>
                               <div class="pizza_img"><img src="images/juustopizza.webp" alt="Juusto Pizza"></div>
-                              <h6 class="ainesosia_text">Mozzarellajuustoa, parmesaanijuustoa ja valkosipulijuustoa</h6>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Lisää Tilaukseen</a></div>
+                                 <div class="buy_bt"><button id="add_button" onclick="addItem('Juusto Pizza');open_ordering_overlay()">Lisää Tilaukseen</button></div>
                               </div>
+                              <h6 class="ainesosia_text">Mozzarellajuustoa, parmesaanijuustoa ja valkosipulijuustoa</h6>
                            </div>
                         </div>
                         <div class="col-lg-4 col-sm-4">
@@ -344,10 +345,10 @@
                               <h4 class="shirt_text">Kreikkalainen Pizza</h4>
                               <p class="Hinta_text">Hinta  <span style="color: #262626;">10€</span></p>
                               <div class="pizza_img"><img src="images/Kreikkalainen-pizza.jpg" alt="Kreikkalainen Pizza"></div>
-                              <h6 class="ainesosia_text">Tomaatti, oliivi, sipuli, paprika, pekoni, sieni, mozzarellajuusto</h6>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Lisää Tilaukseen</a></div>
+                                 <div class="buy_bt"><button id="add_button" onclick="addItem('Kreikkalainen Pizza');open_ordering_overlay()">Lisää Tilaukseen</button></div>
                               </div>
+                              <h6 class="ainesosia_text">Tomaatti, oliivi, sipuli, paprika, pekoni, sieni, mozzarellajuusto</h6>
                            </div>
                         </div>
                         <div class="col-lg-4 col-sm-4">
@@ -355,10 +356,10 @@
                               <h4 class="shirt_text">Margherita pizza</h4>
                               <p class="Hinta_text">Hinta  <span style="color: #262626;">10€</span></p>
                               <div class="pizza_img"><img src="images/margarita-pizza.jpg"></div>
-                              <h6 class="ainesosia_text">Tuoretta mozzarellaa, basilikaa, oreganoa ja tomaattia</h6>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Lisää Tilaukseen</a></div>
+                                 <div class="buy_bt"><button id="add_button" onclick="addItem('Margherita Pizza');open_ordering_overlay()">Lisää Tilaukseen</button></div>
                               </div>
+                              <h6 class="ainesosia_text">Tuoretta mozzarellaa, basilikaa, oreganoa ja tomaattia</h6>
                            </div>
                         </div>
                         <div class="col-lg-4 col-sm-4">
@@ -366,10 +367,10 @@
                               <h4 class="shirt_text">Opera Pizza</h4>
                               <p class="Hinta_text">Hinta  <span style="color: #262626;">10€</span></p>
                               <div class="pizza_img"><img src="images/Opera-pizza.jpg"></div>
-                              <h6 class="ainesosia_text">Oliiveja, rucola, sieniä, tonnikala, kinkku</h6>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Lisää Tilaukseen</a></div>
+                                 <div class="buy_bt"><button id="add_button" onclick="addItem('Opera Pizza');open_ordering_overlay()">Lisää Tilaukseen</button></div>
                               </div>
+                              <h6 class="ainesosia_text">Oliiveja, rucola, sieniä, tonnikala, kinkku</h6>
                            </div>
                         </div>
                         <div class="col-lg-4 col-sm-4">
@@ -377,10 +378,10 @@
                               <h4 class="shirt_text">Kebab Pizza</h4>
                               <p class="Hinta_text">Hinta  <span style="color: #262626;">10€</span></p>
                               <div class="pizza_img"><img src="images/Kebab-pizza.jpg"></div>
-                              <h6 class="ainesosia_text">Kebab, tomaatti, sipuli, tuplajuusto ja kebabkastike</h6>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Lisää Tilaukseen</a></div>
+                                 <div class="buy_bt"><button id="add_button" onclick="addItem('Kebab Pizza');open_ordering_overlay()">Lisää Tilaukseen</button></div>
                               </div>
+                              <h6 class="ainesosia_text">Kebab, tomaatti, sipuli, tuplajuusto ja kebabkastike</h6>
                            </div>
                         </div>
                         <div class="col-lg-4 col-sm-4">
@@ -388,10 +389,10 @@
                               <h4 class="shirt_text">Italialainen Pizza</h4>
                               <p class="Hinta_text">Hinta  <span style="color: #262626;">10€</span></p>
                               <div class="pizza_img"><img src="images/Italialainen-pizza.jpg"></div>
-                              <h6 class="ainesosia_text">Rucola, tomaatti ja mozzarellajuusto</h6>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Lisää Tilaukseen</a></div>
+                                 <div class="buy_bt"><button id="add_button" onclick="addItem('Italialainen Pizza');open_ordering_overlay()">Lisää Tilaukseen</button></div>
                               </div>
+                              <h6 class="ainesosia_text">Rucola, tomaatti ja mozzarellajuusto</h6>
                            </div>
                         </div>
                         <div class="col-lg-4 col-sm-4">
@@ -399,10 +400,10 @@
                               <h4 class="shirt_text">Pepperoni Pizza</h4>
                               <p class="Hinta_text">Hinta  <span style="color: #262626;">10€</span></p>
                               <div class="pizza_img"><img src="images/pepperoni-pizza.jpg" alt="Pepperoni Pizza"></div>
-                              <h6 class="ainesosia_text">Pepperoni, mozzarellajuusto ja mustapippuri</h6>
                               <div class="btn_main">
-                                 <div class="buy_bt"><a href="#">Lisää Tilaukseen</a></div>
+                                 <div class="buy_bt"><button id="add_button" onclick="addItem('Pepperoni Pizza');open_ordering_overlay()">Lisää Tilaukseen</button></div>
                               </div>
+                              <h6 class="ainesosia_text">Pepperoni, mozzarellajuusto ja mustapippuri</h6>
                            </div>
                         </div>
                      </div>

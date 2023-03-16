@@ -192,6 +192,13 @@ function init_pizzas() {
     return pizzas
 }
 
+function toggle_ordering_overlay() {
+    document.getElementById("overlay").style.display === "none" ? 
+    document.getElementById("overlay").style.display = "block" : 
+    document.getElementById("overlay").style.display = "none"
+}
+
+
 function open_ordering_overlay() {
     document.getElementById("overlay").style.display = "block"
 }
@@ -230,6 +237,7 @@ function addItem(name) {
     if (pizza.gluteeniton) {
         item.innerHTML = "Gluteeniton "
         id_tag.value += "_G"
+        pizza.price += 2
     }else {
         item.innerHTML = ""
     }
@@ -239,6 +247,7 @@ function addItem(name) {
     if (pizza.valkosipuli) {
         item.innerHTML += "valkosipulilla "
         id_tag.value += "_V"
+
     }
 
     

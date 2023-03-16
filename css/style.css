@@ -349,6 +349,10 @@ button {
 }
 
 .header_box {
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    z-index: 4;
     padding-left: 31%;
     order: 2;
     display: flex;
@@ -495,7 +499,11 @@ button {
     display: flex;
     text-align: right;
     float: right;
-    padding-right: 100px;
+    background-color: #212529;
+    padding: 5px;
+    border: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .login_menu ul {
@@ -508,8 +516,8 @@ button {
     font-size: 16px;
     color: #ffffff;
     text-transform: uppercase;
-    padding-left: 10px;
-    padding-top: 4px;
+    margin: 5px;
+    
 }
 
 .login_menu li a {
@@ -792,7 +800,7 @@ a:hover {
     width: 100%;
 }
 
-.buy_bt a {
+.buy_bt button {
     width: 100%;
     font-size: 16px;
     color: #f26522;
@@ -801,7 +809,7 @@ a:hover {
     font-weight: bold;
 }
 
-.buy_bt a:hover {
+.buy_bt button:hover {
     background-color: transparent;
     color: #262626;
 }
@@ -1205,6 +1213,7 @@ input.mail_bt::placeholder {
     margin: 1px;
     padding: 10px;
     width: 300px;
+    min-width: fit-content;
     max-height: 95px;
     text-align: center;
     flex-direction: column;
@@ -1248,6 +1257,7 @@ input.mail_bt::placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 10px;
 }
 
 #overlay .scrollbox {
