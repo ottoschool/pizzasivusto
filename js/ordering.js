@@ -46,9 +46,18 @@ function init_fillings() {
         sipuli : new Filling("Sipuli",),
         tuplajuusto : new Filling("Tuplajuusto",),
         gorgonzolajuusto : new Filling("Gorgonzola-juusto",1),
-        persilija : new Filling("Persilija",),
+        persilija : new Filling("Persilija",0),
         pepperoni : new Filling("Pepperoni",1),
-        valkosipulikastike : new Filling("Valkosipulikastike")
+        valkosipulikastike : new Filling("Valkosipulikastike",0),
+        paprika : new Filling("Paprika",1),
+        sieni : new Filling("Sieni",1),
+        kebabkastike : new Filling("Kebabkastike",0),
+        sianlihaaviipaleita : new Filling("Sianlihaaviipaleita",1),
+        ananas : new Filling("Ananas",0),
+        korppujauho : new Filling("Korppujauho",0),
+        katkarapu : new Filling("Katkarapu",1),
+        mustapippuri : new Filling("Mustapippuri",0)
+
     }
     return fillings
 }
@@ -92,14 +101,112 @@ function init_pizzas(fillings) {
             ],
         ),
 
-        juustopizza : new Pizza(
-            "Juusto Pizza",
-            "images/juustopizza.webp",
+        kreikkalainenpizza : new Pizza(
+            "Kreikkalainen Pizza",
+            "images/Kreikkalainen-pizza.jpg",
             10,
             [
                 fillings.mozzarellajuusto, 
-                fillings.parmesaanijuusto, 
-                fillings.valkosipulijuusto, 
+                fillings.sipuli, 
+                fillings.tomaatti,
+                fillings.oliivi,
+                fillings.pekoni,
+                fillings.paprika,
+                fillings.sieni,
+            ],
+        ),
+        
+        margheritapizza : new Pizza(
+            "Margherita Pizza",
+            "images/margarita-pizza.jpg",
+            10,
+            [
+                fillings.mozzarellajuusto, 
+                fillings.oregano, 
+                fillings.basilika,
+                fillings.tomaatti, 
+            ],
+        ),
+
+        operapizza : new Pizza(
+            "Opera Pizza",
+            "images/Opera-pizza.jpg",
+            10,
+            [
+                fillings.oliivi, 
+                fillings.rucola, 
+                fillings.sieni,
+                fillings.tonnikala, 
+                fillings.kinkku,
+            ],
+        ),
+
+        kebabpizza : new Pizza(
+            "Kebab Pizza",
+            "images/Kebab-pizza.jpg",
+            10,
+            [
+                fillings.kebab, 
+                fillings.sipuli, 
+                fillings.tomaatti,
+                fillings.tuplajuusto, 
+                fillings.kebabkastike,
+            ],
+        ),
+
+        italialainenpizza : new Pizza(
+            "Italialainen Pizza",
+            "images/Italialainen-pizza.jpg",
+            10,
+            [
+                fillings.mozzarellajuusto, 
+                fillings.rucola, 
+                fillings.tomaatti,
+            ],
+        ),
+
+        gorgonzolapizza : new Pizza(
+            "Gorgonzola Pizza",
+            "images/Gorgonzola-pizza.jpg",
+            10,
+            [
+                fillings.gorgonzolajuusto, 
+                fillings.sipuli, 
+                fillings.persilija,
+            ],
+        ),
+
+        tropicanapizza : new Pizza(
+            "Tropicana Pizza",
+            "images/Tropicana-pizza.jpg",
+            10,
+            [
+                fillings.mozzarellajuusto, 
+                fillings.sianlihaaviipaleita, 
+                fillings.ananas,
+            ],
+        ),
+
+        katkarapuparmesaanipizza : new Pizza(
+            "Katkarapu Parmesaani Pizza",
+            "images/katkarapu-ja-parmesaanipizzaa.jpg",
+            10,
+            [
+                fillings.mozzarellajuusto, 
+                fillings.katkarapu, 
+                fillings.parmesaanijuusto,
+                fillings.korppujauho
+            ],
+        ),
+
+        pepperonipizza : new Pizza(
+            "Pepperoni Pizza",
+            "images/pepperoni-pizza.jpg",
+            10,
+            [
+                fillings.mozzarellajuusto, 
+                fillings.pepperoni, 
+                fillings.mustapippuri,
             ],
         ),
     }
