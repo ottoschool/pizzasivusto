@@ -1251,8 +1251,6 @@ input.mail_bt::placeholder {
 }
 
 #overlay .scrollbox {
-    overflow-y: auto;
-    scroll-behavior: smooth;
     display: block;
 }
 
