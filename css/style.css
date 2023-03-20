@@ -259,7 +259,7 @@ button {
 }
 
 .custom_menu li a:hover {
-    color: #f26522;
+    color: red;
 }
 
 
@@ -322,7 +322,7 @@ button {
 }
 
 .sidenav a:hover {
-    color: #f26522;
+    color: red;
 }
 
 .sidenav .closebtn {
@@ -400,7 +400,7 @@ button {
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #f26522;
+    background-color: #e3190e;
   }
   
 /* The container <div> - needed to position the dropdown content */
@@ -459,7 +459,7 @@ button {
     border-radius: 5px;
 }
 #submitbtn:hover {
-    background-color: #f26522;
+    background-color: red;
 }
 
 .button_container {
@@ -530,7 +530,7 @@ button {
 }
 
 .login_menu li a:hover {
-    color: #f26522;
+    color: red;
 }
 
 .login_menu input {
@@ -577,7 +577,7 @@ button {
 }
 
 a:hover {
-    color: #f26522;
+    color: red;
     text-decoration: underline;
 }
 
@@ -688,7 +688,7 @@ a:hover {
 }
 
 .buynow_bt a:hover {
-    background-color: #f26522;
+    background-color: #f80000;
     color: #ffffff;
 }
 
@@ -730,12 +730,13 @@ a:hover {
     width: 100%;
     float: left;
     padding-bottom: 150px;
+    background-color:#434343;
 }
 
 .fashion_taital {
     width: 100%;
     font-size: 40px;
-    color: #30302e;
+    color: #e60000;
     text-align: center;
     font-weight: bold;
 }
@@ -747,15 +748,16 @@ a:hover {
 
 .box_main {
     width: 100%;
-    background-color: #ffffff;
+    background-color: #5d5d5d;
     height: auto;
     padding: 20px;
-    box-shadow: 0px 0 30px 10px #f0f0f0;
+    box-shadow: 0px 0 30px 10px #303030;
     margin-bottom: 20px;
 }
 
 .ainesosia_text {
     display: none;
+    color:#fff
 }
 
 .box_main:hover .ainesosia_text{
@@ -765,7 +767,7 @@ a:hover {
 .shirt_text {
     width: 100%;
     font-size: 20px;
-    color: #30302e;
+    color: #f7f7f7;
     text-align: center;
     font-weight: bold;
     padding-bottom: 5px;
@@ -774,7 +776,7 @@ a:hover {
 .Hinta_text {
     width: 100%;
     font-size: 16px;
-    color: #f26522;
+    color: #ffffff;
     text-align: center;
     margin: 0px;
 }
@@ -808,7 +810,7 @@ a:hover {
 .buy_bt button {
     width: 100%;
     font-size: 16px;
-    color: #f26522;
+    color: rgb(255, 255, 255);
     background-color: transparent;
     text-align: right;
     font-weight: bold;
@@ -816,7 +818,7 @@ a:hover {
 
 .buy_bt button:hover {
     background-color: transparent;
-    color: #262626;
+    color: #fff;
 }
 
 .seemore_bt {
@@ -828,14 +830,14 @@ a:hover {
 .seemore_bt a {
     width: 100%;
     font-size: 16px;
-    color: #262626;
+    color: #fff;
     background-color: transparent;
     text-align: right;
 }
 
 .seemore_bt a:hover {
     background-color: transparent;
-    color: #f26522;
+    color: red;
 }
 
 #main_slider a.carousel-control-next {
@@ -862,8 +864,8 @@ a:hover {
 #main_slider .carousel-control-next:hover,
 #main_slider .carousel-control-prev:focus,
 #main_slider .carousel-control-prev:hover {
-    color: #fff;
-    background-color: #f26522;
+    color: #ffffff;
+    background-color: red;
 }
 
 
@@ -904,7 +906,7 @@ a:hover {
 #electronic_main_slider .carousel-control-prev:focus,
 #electronic_main_slider .carousel-control-prev:hover {
     color: #fff;
-    background-color: #f26522;
+    background-color: red;
 }
 
 
@@ -951,7 +953,7 @@ a:hover {
 #jewellery_main_slider .carousel-control-prev:focus,
 #jewellery_main_slider .carousel-control-prev:hover {
     color: #fff;
-    background-color: #f26522;
+    background-color: red;
 }
 
 
@@ -967,9 +969,9 @@ a:hover {
     border: 16px solid #f3f3f3;
     border-radius: 50%;
     border-top: 16px solid #414744;
-    border-right: 16px solid #f26522;
+    border-right: 16px solid red;
     border-bottom: 16px solid #414744;
-    border-left: 16px solid #f26522;
+    border-left: 16px solid red;
     width: 120px;
     height: 120px;
     -webkit-animation: spin 2s linear infinite;
@@ -1047,7 +1049,7 @@ input.mail_bt::placeholder {
     width: 30%;
     float: right;
     font-size: 16px;
-    color: #f26522;
+    color: red;
     background-color: transparent;
     padding: 20px 0px 5px 0px;
     border-radius: 30px;
@@ -1057,7 +1059,7 @@ input.mail_bt::placeholder {
 }
 
 .subscribe_bt a {
-    color: #f26522;
+    color: red;
 }
 
 .subscribe_bt a:hover {
@@ -1088,7 +1090,7 @@ input.mail_bt::placeholder {
 }
 
 .footer_menu li a:hover {
-    color: #f26522;
+    color: red;
 }
 
 .location_main {
@@ -1110,7 +1112,7 @@ input.mail_bt::placeholder {
 }
 
 .location_main a:hover {
-    color: #f26522;
+    color: red;
 }
 
 
@@ -1140,7 +1142,7 @@ input.mail_bt::placeholder {
 }
 
 .copyright_text a:hover {
-    color: #f26522;
+    color: red;
 }
 
 .margin_top90 {
