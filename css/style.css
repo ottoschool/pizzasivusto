@@ -349,6 +349,10 @@ button {
 }
 
 .header_box {
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    z-index: 4;
     padding-left: 31%;
     order: 2;
     display: flex;
@@ -414,8 +418,13 @@ button {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0);
   z-index: 1;
   border: none;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   width: min-content;
+  margin-top: 5px;
+  right: 0px;
 }
 
 /* Links inside the dropdown */
@@ -495,7 +504,11 @@ button {
     display: flex;
     text-align: right;
     float: right;
-    padding-right: 100px;
+    background-color: #212529;
+    padding: 5px;
+    border: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .login_menu ul {
@@ -508,8 +521,8 @@ button {
     font-size: 16px;
     color: #ffffff;
     text-transform: uppercase;
-    padding-left: 10px;
-    padding-top: 4px;
+    margin: 5px;
+    
 }
 
 .login_menu li a {
@@ -792,7 +805,7 @@ a:hover {
     width: 100%;
 }
 
-.buy_bt a {
+.buy_bt button {
     width: 100%;
     font-size: 16px;
     color: #f26522;
@@ -801,7 +814,7 @@ a:hover {
     font-weight: bold;
 }
 
-.buy_bt a:hover {
+.buy_bt button:hover {
     background-color: transparent;
     color: #262626;
 }
@@ -1147,7 +1160,7 @@ input.mail_bt::placeholder {
     z-index: 3;
 }
 
-#overlay_block {
+.overlay_block {
     background-color: white;
     align-content: center;
     position: fixed;
@@ -1158,15 +1171,18 @@ input.mail_bt::placeholder {
     height: 80%;
     border: none;
     border-radius: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
 
 }
 
 .close_button {
-    position: relative;
+    position: fixed;
     width: 20px;
     height: 10px;
-    left: 96.5%;
-    top: 2%;
+    left: 87%;
+    top: 13%;
     
 }
 
@@ -1181,12 +1197,12 @@ input.mail_bt::placeholder {
 
 }
 
-#overlay_block {
+.overlay_block {
     overflow: hidden;
     overflow-y: auto;   
 }
 
-#overlay_block ul img {
+.overlay_block ul img {
     max-width: 50%;
     max-height: 50px;
     margin-top: 8px;
@@ -1194,41 +1210,75 @@ input.mail_bt::placeholder {
     min-width: 80px;
 }
 
-#overlay_block li {
+.overlay_block .scrollbox li {
     display: inline-flex;
     vertical-align:top;
     border: 1px solid black;
     border-radius: 5px;
     margin: 1px;
     padding: 10px;
-    max-width: 220px;
-    min-width: 200px;
+    width: 300px;
+    min-width: fit-content;
     max-height: 95px;
     text-align: center;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    color: #000;
+
+    transition-delay: 0.5s;
+    transition-duration: 1s;
 }
 
-#overlay_block ul {
+.overlay_block .scrollbox li:hover {
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 105%;
+    height: 115%;
+    background-color:#aaa;
+    
+    transition-duration: 0.5s;
+    transition-delay: 0s;
+    transition-timing-function:ease-out;
+}
+
+.overlay_block .scrollbox li:hover img {
+    scale: 130%;
+    border-radius: 10%;
+    margin: 4px;
+    margin-right: 10px;
+
+    transition-duration: 0.3s;
+    transition-delay: 0s;
+    transition-timing-function:ease-out;
+}
+
+
+
+
+.overlay_block ul {
     width: max-content;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }  
+    margin-left: 10px;
+}
 
 #overlay .scrollbox {
-    overflow-y: auto;
-    scroll-behavior: smooth;
     display: block;
 }
 
-#overlay_block {
+.overlay_block {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer and Edge */
 }
 
-#overlay_block::-webkit-scrollbar {
+.overlay_block p {
+    margin: 5px;
+}
+
+.overlay_block::-webkit-scrollbar {
   width: 10px;
   height: 10px;
   background-color: #f5f5f5;
@@ -1236,17 +1286,84 @@ input.mail_bt::placeholder {
   border-bottom-right-radius: 10px;
 }
 
-#overlay_block::-webkit-scrollbar-thumb {
+.overlay_block::-webkit-scrollbar-thumb {
   background-color: #aaa;
   border-radius: 10px;
   border: 2px solid #f5f5f5;
 }
 
-#overlay_block::-webkit-scrollbar-track {
+.overlay_block::-webkit-scrollbar-track {
   background-color: #f5f5f5;
   border-radius: 10px;
 }
 
-#overlay_block::-webkit-scrollbar-thumb:hover {
+.overlay_block::-webkit-scrollbar-thumb:hover {
   background-color: #555;
+}
+
+.overlay_block .ordering_menu #add_button {
+    background-color:springgreen;
+    width: 80px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.overlay_block .ordering_menu img {
+    max-width: 20px;
+    min-width: 20px;
+}
+
+.ordering_menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.ordering_menu button {
+    margin:  8px;
+}
+
+.overlay_block .shoppingcart_box {
+    text-align: right;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+#shoppingcart {
+    text-align: left;
+    align-items: baseline;
+}
+
+#shoppingcart li {
+    text-align: left;
+}
+
+#shoppingcart button {
+    background-color: rgba(0,0,0,0);
+}
+
+#shoppingcart img {
+    min-width: 0;
+    width: 20px;
+    padding-bottom: 6px;
+}
+
+.pizza_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.lisataytteet {
+    visibility: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.lisataytteet input {
+    margin-left: 5px;
+}
+
+.overlay_block .scrollbox li:hover .lisataytteet{
+    visibility: visible;
 }
