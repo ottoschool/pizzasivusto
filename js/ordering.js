@@ -99,7 +99,7 @@ function init_pizzas() { // pizzat
 
         new Pizza(
             "Juusto Pizza",
-            "images/juustopizza.webp",
+            "images/Mozarella-juusto pizza.jpg",
             10,
             3,
             [
