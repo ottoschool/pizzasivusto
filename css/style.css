@@ -736,9 +736,10 @@ a:hover {
 .fashion_taital {
     width: 100%;
     font-size: 40px;
-    color: #ca0000;
+    color: #e60000;
     text-align: center;
     font-weight: bold;
+    text-shadow: 0px 0 30px 10px #000000;
 }
 
 .fashion_section_2 {
