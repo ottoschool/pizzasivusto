@@ -100,7 +100,7 @@ function init_pizzas() { // pizzat
         new Pizza(
             "Juusto Pizza",
             "images/Mozarella-juusto pizza.jpg",
-            10,
+            8,
             3,
             [
                 fillings.mozzarellajuusto, 
@@ -128,7 +128,7 @@ function init_pizzas() { // pizzat
         new Pizza(
             "Margherita Pizza",
             "images/margarita-pizza.jpg",
-            10,
+            9,
             5,
             [
                 fillings.mozzarellajuusto, 
@@ -141,7 +141,7 @@ function init_pizzas() { // pizzat
         new Pizza(
             "Opera Pizza",
             "images/Opera-pizza.jpg",
-            10,
+            9.50,
             6,
             [
                 fillings.oliivi, 
@@ -155,7 +155,7 @@ function init_pizzas() { // pizzat
         new Pizza(
             "Kebab Pizza",
             "images/Kebab-pizza.jpg",
-            10,
+            11,
             7,
             [
                 fillings.kebab, 
