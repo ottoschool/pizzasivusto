@@ -190,15 +190,6 @@ function init_pizzas() { // pizzat
             ],
         ),
 
-        new Pizza(
-            "Coca Cola 0.5L",
-            "images/cola.jpg",
-            3.50,
-            10,
-            [
-               
-            ],
-        ),
     ]
     return pizzas
 }
