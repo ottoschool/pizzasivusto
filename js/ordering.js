@@ -72,7 +72,7 @@ function init_pizzas() { // pizzat
         new Pizza(
             "Pekoni Grilli Pizza",
             "images/pekoni-grillipizza.jpg",
-            10,
+            12,
             1,
             [
                 fillings.karamellisoitu_sipuli, 
