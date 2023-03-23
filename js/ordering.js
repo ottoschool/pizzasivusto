@@ -73,7 +73,7 @@ function init_pizzas() { // pizzat
         new Pizza(
             "Pekoni Grilli Pizza",
             "images/pekoni-grillipizza.jpg",
-            10,
+            12,
             1,
             [
                 fillings.karamellisoitu_sipuli, 
@@ -87,7 +87,7 @@ function init_pizzas() { // pizzat
         new Pizza(
             "Kana Pizza",
             "images/Kana-pizza.jpg",
-            10,
+            12,
             2,
             [
                 fillings.kana, 
@@ -101,7 +101,7 @@ function init_pizzas() { // pizzat
         new Pizza(
             "Juusto Pizza",
             "images/Mozarella-juusto pizza.jpg",
-            10,
+            8,
             3,
             [
                 fillings.mozzarellajuusto, 
@@ -113,7 +113,7 @@ function init_pizzas() { // pizzat
          new Pizza(
             "Kreikkalainen Pizza",
             "images/Kreikkalainen-pizza.jpg",
-            10,
+            11,
             4,
             [
                 fillings.mozzarellajuusto, 
@@ -129,7 +129,7 @@ function init_pizzas() { // pizzat
         new Pizza(
             "Margherita Pizza",
             "images/margarita-pizza.jpg",
-            10,
+            9,
             5,
             [
                 fillings.mozzarellajuusto, 
@@ -142,7 +142,7 @@ function init_pizzas() { // pizzat
         new Pizza(
             "Opera Pizza",
             "images/Opera-pizza.jpg",
-            10,
+            9.50,
             6,
             [
                 fillings.oliivi, 
@@ -156,7 +156,7 @@ function init_pizzas() { // pizzat
         new Pizza(
             "Kebab Pizza",
             "images/Kebab-pizza.jpg",
-            10,
+            11,
             7,
             [
                 fillings.kebab, 
@@ -170,7 +170,7 @@ function init_pizzas() { // pizzat
         new Pizza(
             "Italialainen Pizza",
             "images/Italialainen-pizza.jpg",
-            10,
+            12,
             8,
             [
                 fillings.mozzarellajuusto, 
@@ -182,7 +182,7 @@ function init_pizzas() { // pizzat
         new Pizza(
             "Pepperoni Pizza",
             "images/pepperoni-pizza.jpg",
-            10,
+            9.50,
             9,
             [
                 fillings.mozzarellajuusto, 
@@ -190,6 +190,7 @@ function init_pizzas() { // pizzat
                 fillings.mustapippuri,
             ],
         ),
+
     ]
     return pizzas
 }

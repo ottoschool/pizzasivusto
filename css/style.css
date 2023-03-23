@@ -214,7 +214,7 @@ button {
 .banner_bg_main {
     width: 100%;
     float: left;
-    background-image: url(../images/pizzabackground.jpg);
+    background-image: url(../images/Pizza\ in\ oven\ background.jpg);
     height: auto;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -717,7 +717,7 @@ a:hover {
 #my_slider .carousel-control-next:hover,
 #my_slider .carousel-control-prev:focus,
 #my_slider .carousel-control-prev:hover {
-    color: #fff;
+    color: #ffffff;
 }
 
 
@@ -730,14 +730,16 @@ a:hover {
     width: 100%;
     float: left;
     padding-bottom: 150px;
+    background-color: #3d3d3d;
 }
 
 .fashion_taital {
     width: 100%;
     font-size: 40px;
-    color: #ca0000;
+    color: #e60000;
     text-align: center;
     font-weight: bold;
+    text-shadow: 0px 0 30px 10px #000000;
 }
 
 .fashion_section_2 {
@@ -747,15 +749,16 @@ a:hover {
 
 .box_main {
     width: 100%;
-    background-color: #ffffff;
+    background-color: #4a4a4a;
     height: auto;
     padding: 20px;
-    box-shadow: 0px 0 30px 10px #f0f0f0;
+    box-shadow: 0px 0 30px 10px #232323;
     margin-bottom: 20px;
 }
 
 .ainesosia_text {
     display: none;
+    color: #fff;
 }
 
 .box_main:hover .ainesosia_text{
@@ -765,7 +768,7 @@ a:hover {
 .shirt_text {
     width: 100%;
     font-size: 20px;
-    color: #30302e;
+    color: #ffffff;
     text-align: center;
     font-weight: bold;
     padding-bottom: 5px;
@@ -774,7 +777,7 @@ a:hover {
 .Hinta_text {
     width: 100%;
     font-size: 16px;
-    color: #f26522;
+    color: #ffffff;
     text-align: center;
     margin: 0px;
 }
@@ -808,7 +811,7 @@ a:hover {
 .buy_bt button {
     width: 100%;
     font-size: 16px;
-    color: #f26522;
+    color: #fff;
     background-color: transparent;
     text-align: right;
     font-weight: bold;
@@ -816,7 +819,7 @@ a:hover {
 
 .buy_bt button:hover {
     background-color: transparent;
-    color: #262626;
+    color: #f26522;
 }
 
 .seemore_bt {
@@ -862,7 +865,7 @@ a:hover {
 #main_slider .carousel-control-next:hover,
 #main_slider .carousel-control-prev:focus,
 #main_slider .carousel-control-prev:hover {
-    color: #fff;
+    color: #ffffff;
     background-color: #f26522;
 }
 
