@@ -26,6 +26,7 @@ function main() {
     // tallennetaan vaan pohja ostoskorille 
     orders = JSON.stringify([])
     localStorage.setItem("orders",orders)
+    localStorage.setItem("totalprice",0)
 }
 
 function init_fillings() { // täytteet
@@ -224,6 +225,7 @@ function removeItem(name) {
         return obj.name === name
     })
     pizza = pizza[0]
+    price = pizza.price
 
     // haetaan ostoskorin muisti localstoragesta
     var orders = JSON.parse(localStorage.getItem("orders"))
@@ -247,7 +249,7 @@ function removeItem(name) {
     if (pizza.gluteeniton) {
         message = "Gluteeniton "
         id_tag.value += "_G"
-        pizza.price += 2
+        price += 2
     }
 
     message += `${pizza.name} `
@@ -267,7 +269,7 @@ function removeItem(name) {
         orders.splice(orders.indexOf(item.innerHTML),1)
         duplicates -= 1
         item.innerHTML = `x${duplicates} ` + item.innerHTML
-        item.innerHTML += `${pizza.price*(duplicates)} €`
+        item.innerHTML += `${price*(duplicates)} €`
         document.getElementById(id_tag.value).appendChild(remove_button)
 
     }else {
@@ -275,6 +277,12 @@ function removeItem(name) {
         document.getElementById("shoppingcart").removeChild(item)
 
     }
+    // päivitetään yhteishinta
+    let totalprice = Number(localStorage.getItem("totalprice"))
+    totalprice -= price
+    localStorage.setItem("totalprice", totalprice)
+    document.getElementById("total_price").innerHTML = `yhteishinta ${((totalprice * 100) / 100).toFixed(2)} €`
+
     //tallennetaan localstorageen
     localStorage.setItem("orders", JSON.stringify(orders))
 }
@@ -285,6 +293,7 @@ function addItem(name) {
         return obj.name === name
     })
     pizza = pizza[0]
+    price = pizza.price
 
     // haetaan ostoskorin muisti localstoragesta
     var orders = JSON.parse(localStorage.getItem("orders"))
@@ -309,7 +318,7 @@ function addItem(name) {
     if (pizza.gluteeniton) {
         item.innerHTML = "Gluteeniton "
         id_tag.value += "_G"
-        pizza.price += 2
+        price += 2
     }else {
         item.innerHTML = ""
     }
@@ -324,21 +333,28 @@ function addItem(name) {
     item.setAttributeNode(id_tag)
     
     // lasketaan toistuvat pizzat
-    const duplicates = countDuplicates(orders, item.innerHTML)
+    let duplicates = countDuplicates(orders, item.innerHTML)
     // jos yhtä pizzaa löytyy yhtä useampaa niin lasketaan pizzojen määrä uuden lisäämisen sijaan
     if (duplicates !== 0) {
+        duplicates += 1
         orders.push(item.innerHTML)
-        item.innerHTML = `x${duplicates+1} ` + item.innerHTML
-        item.innerHTML += `${pizza.price*(duplicates+1)} €`
+        item.innerHTML = `x${duplicates} ` + item.innerHTML
+        item.innerHTML += `${price*(duplicates)} €`
         document.getElementById(id_tag.value).innerHTML = item.innerHTML
         document.getElementById(id_tag.value).appendChild(remove_button)
 
     }else {
         orders.push(item.innerHTML)
-        item.innerHTML += `${pizza.price} €`
+        item.innerHTML += `${price} €`
         document.getElementById("shoppingcart").appendChild(item)
         document.getElementById(id_tag.value).appendChild(remove_button)
     }
+    // päivitetään yhteishinta
+    let totalprice = Number(localStorage.getItem("totalprice"))
+    totalprice += price
+    localStorage.setItem("totalprice", totalprice)
+    document.getElementById("total_price").innerHTML = `yhteishinta ${((totalprice * 100) / 100).toFixed(2)} €`
+
     //tallennetaan localstorageen
     localStorage.setItem("orders", JSON.stringify(orders))
     
