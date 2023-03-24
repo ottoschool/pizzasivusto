@@ -128,14 +128,16 @@
             <div class="close_button">
                <button onclick="close_ordering_overlay()"><img src="images/close-symbol.png"></button>
             </div>
-            <div class="shoppingcart_box">
+            <div class="shoppingcart_box" id="ordering1">
                <h1>Ostoskori</h1>
                <ul id="shoppingcart">
 
                </ul>
-
+               <h2 id="total_price">yhteishinta 0.00€</h2>
+               
+               
             </div>
-            <div class="container">
+            <div class="container" id="ordering2">
                <div class="scrollbox">
                   <ul>
                      <li>
@@ -374,9 +376,12 @@
                      </li>
                </ul>
             </div>
+            <div>
+
             </div>
          </div>
       </div>
+   </div>
 
       <!-- ordering overlay end -->
 

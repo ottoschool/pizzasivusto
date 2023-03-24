@@ -14,18 +14,29 @@ class Pizza{ // pizza classi
         this.id = id
         this.gluteeniton = gluteeniton
         this.valkosipuli = valkosipuli
-
     }
+}
+
+class Item{ // muut ostettavat tuotteet
+    constructor(name, image, price, id){
+        this.name = name
+        this.image = image
+        this.price = price
+        this.id = id
+    }
+
 }
 
 
 var fillings = init_fillings()
 var pizzas = init_pizzas()
+var items = init_items()
 
 function main() {
     // tallennetaan vaan pohja ostoskorille 
     orders = JSON.stringify([])
     localStorage.setItem("orders",orders)
+    localStorage.setItem("totalprice",0)
 }
 
 function init_fillings() { // täytteet
@@ -190,9 +201,71 @@ function init_pizzas() { // pizzat
             ],
         ),
 
+        new Item(
+            "Coca Cola",
+            "images/cola.png",
+            3.50,
+            10
+        ),
+        new Item(
+            "Fanta 0.5L",
+            "images/fanta0.5.png",
+            3.50,
+            11
+        ),
+        new Item(
+            "Sprite 0.5L",
+            "images/sprite.png",
+            3.50,
+            12
+        ),
+        
+        new Item(
+            "Coca Cola Zero",
+            "images/cocacola zero.png",
+            3.50,
+            13
+        ),
+        
+        new Item(
+            "Jaffa 0.5L",
+            "images/jaffa.png",
+            3.50,
+            14
+        ),
+        
+        new Item(
+            "Vichy 0.5L",
+            "images/Vichy 1.5L",
+            4,
+            15
+        ),
+        
+        new Item(
+            "Dr pepper 0.5L",
+            "images/Dr-pepper.png",
+            2.50,
+            16
+        ),
+        
+        new Item(
+            "Mountain Dew 0.3L",
+            "images/Dr-pepper.png",
+            2.50,
+            17
+        ),
+        
+        new Item(
+            "Red Bull 0.3L",
+            "images/redbull.png",
+            3,
+            18
+        ),
+
     ]
     return pizzas
 }
+
 
 function toggle_ordering_overlay() {
     document.getElementById("overlay").style.display === "none" ? 
@@ -225,13 +298,18 @@ function removeItem(name) {
         return obj.name === name
     })
     pizza = pizza[0]
+    price = pizza.price
 
     // haetaan ostoskorin muisti localstoragesta
     var orders = JSON.parse(localStorage.getItem("orders"))
 
     //tarkistetaan onko gluteenitonta tai valkosipulia valittu ja päivitetään pizzan tietoihin
-    document.getElementById(`gluteeniton_${pizza.id}`).checked ? pizza.gluteeniton = true:pizza.gluteeniton = false
-    document.getElementById(`valkosipuli_${pizza.id}`).checked ? pizza.valkosipuli = true:pizza.valkosipuli = false
+    try {
+        document.getElementById(`gluteeniton_${pizza.id}`).checked ? pizza.gluteeniton = true:pizza.gluteeniton = false
+        document.getElementById(`valkosipuli_${pizza.id}`).checked ? pizza.valkosipuli = true:pizza.valkosipuli = false
+    }catch{
+
+    }
 
     //luodaan html elementit
     let id_tag = document.createAttribute("id")
@@ -248,7 +326,7 @@ function removeItem(name) {
     if (pizza.gluteeniton) {
         message = "Gluteeniton "
         id_tag.value += "_G"
-        pizza.price += 2
+        price += 2
     }
 
     message += `${pizza.name} `
@@ -268,7 +346,7 @@ function removeItem(name) {
         orders.splice(orders.indexOf(item.innerHTML),1)
         duplicates -= 1
         item.innerHTML = `x${duplicates} ` + item.innerHTML
-        item.innerHTML += `${pizza.price*(duplicates)} €`
+        item.innerHTML += `${price*(duplicates)} €`
         document.getElementById(id_tag.value).appendChild(remove_button)
 
     }else {
@@ -276,6 +354,12 @@ function removeItem(name) {
         document.getElementById("shoppingcart").removeChild(item)
 
     }
+    // päivitetään yhteishinta
+    let totalprice = Number(localStorage.getItem("totalprice"))
+    totalprice -= price
+    localStorage.setItem("totalprice", totalprice)
+    document.getElementById("total_price").innerHTML = `yhteishinta ${((totalprice * 100) / 100).toFixed(2)} €`
+
     //tallennetaan localstorageen
     localStorage.setItem("orders", JSON.stringify(orders))
 }
@@ -286,13 +370,18 @@ function addItem(name) {
         return obj.name === name
     })
     pizza = pizza[0]
+    price = pizza.price
 
     // haetaan ostoskorin muisti localstoragesta
     var orders = JSON.parse(localStorage.getItem("orders"))
 
     //tarkistetaan onko gluteenitonta tai valkosipulia valittu ja päivitetään pizzan tietoihin
-    document.getElementById(`gluteeniton_${pizza.id}`).checked ? pizza.gluteeniton = true:pizza.gluteeniton = false
-    document.getElementById(`valkosipuli_${pizza.id}`).checked ? pizza.valkosipuli = true:pizza.valkosipuli = false
+    try{
+        document.getElementById(`gluteeniton_${pizza.id}`).checked ? pizza.gluteeniton = true:pizza.gluteeniton = false
+        document.getElementById(`valkosipuli_${pizza.id}`).checked ? pizza.valkosipuli = true:pizza.valkosipuli = false
+    }catch{
+
+    }
     
     //luodaan html elementit
     let id_tag = document.createAttribute("id")
@@ -310,7 +399,7 @@ function addItem(name) {
     if (pizza.gluteeniton) {
         item.innerHTML = "Gluteeniton "
         id_tag.value += "_G"
-        pizza.price += 2
+        price += 2
     }else {
         item.innerHTML = ""
     }
@@ -325,22 +414,40 @@ function addItem(name) {
     item.setAttributeNode(id_tag)
     
     // lasketaan toistuvat pizzat
-    const duplicates = countDuplicates(orders, item.innerHTML)
+    let duplicates = countDuplicates(orders, item.innerHTML)
     // jos yhtä pizzaa löytyy yhtä useampaa niin lasketaan pizzojen määrä uuden lisäämisen sijaan
     if (duplicates !== 0) {
+        duplicates += 1
         orders.push(item.innerHTML)
-        item.innerHTML = `x${duplicates+1} ` + item.innerHTML
-        item.innerHTML += `${pizza.price*(duplicates+1)} €`
+        item.innerHTML = `x${duplicates} ` + item.innerHTML
+        item.innerHTML += `${price*(duplicates)} €`
         document.getElementById(id_tag.value).innerHTML = item.innerHTML
         document.getElementById(id_tag.value).appendChild(remove_button)
 
     }else {
         orders.push(item.innerHTML)
-        item.innerHTML += `${pizza.price} €`
+        item.innerHTML += `${price} €`
         document.getElementById("shoppingcart").appendChild(item)
         document.getElementById(id_tag.value).appendChild(remove_button)
     }
+    // päivitetään yhteishinta
+    let totalprice = Number(localStorage.getItem("totalprice"))
+    totalprice += price
+    localStorage.setItem("totalprice", totalprice)
+    document.getElementById("total_price").innerHTML = `yhteishinta ${((totalprice * 100) / 100).toFixed(2)} €`
+
     //tallennetaan localstorageen
     localStorage.setItem("orders", JSON.stringify(orders))
     
+}
+
+function switch_overlay_content() {
+    document.getElementById("ordering1").style.display === "none" ? 
+    document.getElementById("ordering1").style.display = "block" : 
+    document.getElementById("ordering1").style.display = "none"
+    
+    document.getElementById("ordering2").style.display === "none" ? 
+    document.getElementById("ordering2").style.display = "block" : 
+    document.getElementById("ordering2").style.display = "none"
+
 }
