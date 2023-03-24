@@ -14,13 +14,23 @@ class Pizza{ // pizza classi
         this.id = id
         this.gluteeniton = gluteeniton
         this.valkosipuli = valkosipuli
-
     }
+}
+
+class Item{ // muut ostettavat tuotteet
+    constructor(name, image, price, id){
+        this.name = name
+        this.image = image
+        this.price = price
+        this.id = id
+    }
+
 }
 
 
 var fillings = init_fillings()
 var pizzas = init_pizzas()
+var items = init_items()
 
 function main() {
     // tallennetaan vaan pohja ostoskorille 
@@ -191,9 +201,71 @@ function init_pizzas() { // pizzat
             ],
         ),
 
+        new Item(
+            "Coca Cola",
+            "images/cola.png",
+            3.50,
+            10
+        ),
+        new Item(
+            "Fanta 0.5L",
+            "images/fanta0.5.png",
+            3.50,
+            11
+        ),
+        new Item(
+            "Sprite 0.5L",
+            "images/sprite.png",
+            3.50,
+            12
+        ),
+        
+        new Item(
+            "Coca Cola Zero",
+            "images/cocacola zero.png",
+            3.50,
+            13
+        ),
+        
+        new Item(
+            "Jaffa 0.5L",
+            "images/jaffa.png",
+            3.50,
+            14
+        ),
+        
+        new Item(
+            "Vichy 0.5L",
+            "images/Vichy 1.5L",
+            4,
+            15
+        ),
+        
+        new Item(
+            "Dr pepper 0.5L",
+            "images/Dr-pepper.png",
+            2.50,
+            16
+        ),
+        
+        new Item(
+            "Mountain Dew 0.3L",
+            "images/Dr-pepper.png",
+            2.50,
+            17
+        ),
+        
+        new Item(
+            "Red Bull 0.3L",
+            "images/redbull.png",
+            3,
+            18
+        ),
+
     ]
     return pizzas
 }
+
 
 function toggle_ordering_overlay() {
     document.getElementById("overlay").style.display === "none" ? 
@@ -232,8 +304,12 @@ function removeItem(name) {
     var orders = JSON.parse(localStorage.getItem("orders"))
 
     //tarkistetaan onko gluteenitonta tai valkosipulia valittu ja päivitetään pizzan tietoihin
-    document.getElementById(`gluteeniton_${pizza.id}`).checked ? pizza.gluteeniton = true:pizza.gluteeniton = false
-    document.getElementById(`valkosipuli_${pizza.id}`).checked ? pizza.valkosipuli = true:pizza.valkosipuli = false
+    try {
+        document.getElementById(`gluteeniton_${pizza.id}`).checked ? pizza.gluteeniton = true:pizza.gluteeniton = false
+        document.getElementById(`valkosipuli_${pizza.id}`).checked ? pizza.valkosipuli = true:pizza.valkosipuli = false
+    }catch{
+
+    }
 
     //luodaan html elementit
     let id_tag = document.createAttribute("id")
@@ -300,8 +376,12 @@ function addItem(name) {
     var orders = JSON.parse(localStorage.getItem("orders"))
 
     //tarkistetaan onko gluteenitonta tai valkosipulia valittu ja päivitetään pizzan tietoihin
-    document.getElementById(`gluteeniton_${pizza.id}`).checked ? pizza.gluteeniton = true:pizza.gluteeniton = false
-    document.getElementById(`valkosipuli_${pizza.id}`).checked ? pizza.valkosipuli = true:pizza.valkosipuli = false
+    try{
+        document.getElementById(`gluteeniton_${pizza.id}`).checked ? pizza.gluteeniton = true:pizza.gluteeniton = false
+        document.getElementById(`valkosipuli_${pizza.id}`).checked ? pizza.valkosipuli = true:pizza.valkosipuli = false
+    }catch{
+
+    }
     
     //luodaan html elementit
     let id_tag = document.createAttribute("id")
@@ -359,4 +439,15 @@ function addItem(name) {
     //tallennetaan localstorageen
     localStorage.setItem("orders", JSON.stringify(orders))
     
+}
+
+function switch_overlay_content() {
+    document.getElementById("ordering1").style.display === "none" ? 
+    document.getElementById("ordering1").style.display = "block" : 
+    document.getElementById("ordering1").style.display = "none"
+    
+    document.getElementById("ordering2").style.display === "none" ? 
+    document.getElementById("ordering2").style.display = "block" : 
+    document.getElementById("ordering2").style.display = "none"
+
 }

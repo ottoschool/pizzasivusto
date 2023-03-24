@@ -271,7 +271,7 @@ button {
 .logo_section {
     width: 100%;
     float: left;
-    background-color:#151812;
+    background-color:#252525;
 }
 
 .logo {
@@ -662,7 +662,7 @@ a:hover {
 .banner_taital {
     width: 100%;
     font-size: 60px;
-    color: #ffffff;
+    color: #e60000;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
@@ -1164,7 +1164,7 @@ input.mail_bt::placeholder {
 }
 
 .overlay_block {
-    background-color: white;
+    background-color: #3d3d3d;
     align-content: center;
     position: fixed;
     top: 10%;
@@ -1197,7 +1197,10 @@ input.mail_bt::placeholder {
     max-width: 70%;
     text-align: left;
     margin: 0px;
+}
 
+#ordering1 {
+    display: block;
 }
 
 .overlay_block {
@@ -1228,6 +1231,7 @@ input.mail_bt::placeholder {
     justify-content: space-between;
     align-items: center;
     color: #000;
+    background-color: #aaa;
 
     transition-delay: 0.5s;
     transition-duration: 1s;
@@ -1239,7 +1243,7 @@ input.mail_bt::placeholder {
     margin-bottom: 10px;
     width: 105%;
     height: 115%;
-    background-color:#aaa;
+    background-color:white;
     
     transition-duration: 0.5s;
     transition-delay: 0s;
