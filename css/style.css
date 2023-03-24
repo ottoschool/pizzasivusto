@@ -1336,6 +1336,10 @@ input.mail_bt::placeholder {
     margin-top: 10px;
 }
 
+.shoppingcart_box h1,h2 {
+    color: white;
+}
+
 #shoppingcart {
     text-align: left;
     align-items: baseline;
